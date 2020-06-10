@@ -1,0 +1,20 @@
+2020-03-01 19:12:37	-->	dpfeiffer (~david@n122-110-201-194.sun2.vic.optusnet.com.au) has joined #neovim
+2020-03-01 19:12:37	--	Topic for #neovim is "Register with NickServ to talk | Vim fork focused on extensibility and usability -- https://github.com/neovim/neovim -- Help sustain Neovim: https://salt.bountysource.com/teams/neovim -- Gitter: https://gitter.im/neovim/neovim"
+2020-03-01 19:12:37	--	Topic set by jamessan (~jamessan@debian/developer/jamessan) on Thu, 27 Sep 2018 11:36:33
+2020-03-01 19:12:37	--	Channel #neovim: 1182 nicks (0 ops, 0 voices, 1182 normals)
+2020-03-01 19:12:39	--	Channel created on Sat, 01 Feb 2014 03:44:47
+2020-03-01 19:17:10	dpfeiffer	Can anyone help me set up airline status line on nvim? I've got the plugin installed and the airline appears but the seperators are straight | not the cool chevron symvol > and i cant figure out what i've missed
+2020-03-01 19:26:31	-->	chargen (~chargen@12.111.135.37.dynamic.jazztel.es) has joined #neovim
+2020-03-01 19:34:28	<--	tdy (~tdy@unaffiliated/tdy) has quit (Ping timeout: 258 seconds)
+2020-03-01 19:47:42	<--	oatmealraisin (~ryan@2604:2000:1000:301:114b:256:6dee:a171) has quit (Ping timeout: 256 seconds)
+2020-03-01 19:47:43	linarcx	 i have a string in viml. and i want to remove last 4 charachters from it. How do that?
+2020-03-01 19:50:27	-->	brtastic (~Thunderbi@2a02:a315:413a:7580:879e:25b4:92ae:7858) has joined #neovim
+2020-03-01 19:51:40	JooPauloGitter[m	@linarcx `strpart(string, 0, len(string) - 4)`
+2020-03-01 19:53:11	-->	coellobranco (~FoRcEr@44.113.165.83.dynamic.reverse-mundo-r.com) has joined #neovim
+2020-03-01 19:54:11	JooPauloGitter[m	`make distclean && make CMAKE_BUILD_TYPE=Release` worked, thank you
+2020-03-01 19:59:49	linarcx	JooPauloGitter[m: Thanks.
+2020-03-01 20:03:03	<--	cnsvc_ (~cnsvc@gateway/tor-sasl/cnsvc) has quit (Ping timeout: 240 seconds)
+2020-03-01 20:20:31	-->	cnsvc_ (~cnsvc@gateway/tor-sasl/cnsvc) has joined #neovim
+2020-03-01 20:24:43	<--	cnsvc_ (~cnsvc@gateway/tor-sasl/cnsvc) has quit (Ping timeout: 240 seconds)
+2020-03-01 20:26:26	<--	Guest49 (ab5b520a@gateway/web/cgi-irc/kiwiirc.com/ip.171.91.82.10) has quit (Ping timeout: 240 seconds)
+2020-03-01 20:27:09	<--	dpfeiffer (~david@n122-110-201-194.sun2.vic.optusnet.com.au) has left #neovim ("WeeChat 2.6")

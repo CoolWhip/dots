@@ -1,0 +1,811 @@
+2020-06-03 19:46:31	-->	dpfeiffer (~david@49.193.237.62) has joined ##linux
+2020-06-03 19:46:31	--	Topic for ##linux is "Channel website: https://freenode.linux.community -- Pastebin: "<command> | nc termbin.com 9999" (please don't use pastebin.com) -- Need an op? Join ##linux-ops"
+2020-06-03 19:46:31	--	Topic set by sauvin on Mon, 30 Mar 2020 18:56:02
+2020-06-03 19:46:32	--	Channel ##linux: 1824 nicks (0 ops, 0 voices, 1824 normals)
+2020-06-03 19:46:32	--	PvNotice(ChanServ): Please see https://freenode.linux.community/how-to-connect/ on how to register or identify your nick. By joining this channel you agree to abide by the channel rules and guidelines laid out at https://freenode.linux.community/channel-rules/.
+2020-06-03 19:46:32	--	URL for ##linux: https://freenode.linux.community
+2020-06-03 19:46:34	--	Channel created on Sat, 10 Feb 2001 10:16:24
+2020-06-03 19:46:36	-->	deavmi (~tbk@165.0.49.28) has joined ##linux
+2020-06-03 19:47:40	dpfeiffer	can someone help me figure out how to display my shell including its version in a ufetch script?
+2020-06-03 19:48:06	MrElendig	distro dependent
+2020-06-03 19:48:15	MrElendig	also slightly shell dependent
+2020-06-03 19:49:09	dpfeiffer	I am using zsh so $ basename "${SHELL} ${ZSH_ZERSION}" returns with zsh 5.8
+2020-06-03 19:49:10	MrElendig	sadly there is no consistent -v/--version/-V behaviour for shells, so you have to code it for each one
+2020-06-03 19:49:22	dpfeiffer	sorry, Pop!_OS
+2020-06-03 19:49:22	<--	karoofish (~karoofish@197.185.117.131) has quit (Ping timeout: 256 seconds)
+2020-06-03 19:49:40	MrElendig	btw, several of the "ufetch" like scripts does this for you already
+2020-06-03 19:50:40	dpfeiffer	I place shell="$(basename "${SHELL} ${ZSH_ZERSION}")" in my ufetch and it shows zsh but not the version
+2020-06-03 19:50:54	<--	marropax (~marropax@vpn.marropax.com) has quit (Read error: Connection reset by peer)
+2020-06-03 19:51:02	-->	marropax_ (~marropax@vpn.marropax.com) has joined ##linux
+2020-06-03 19:51:04	dpfeiffer	when that same command works in the terminal i'm confused
+2020-06-03 19:51:06	MrElendig	https://github.com/dylanaraps/neofetch/blob/master/neofetch#L1588
+2020-06-03 19:51:08	MrElendig	enjoy
+2020-06-03 19:51:20	<--	marropax_ (~marropax@vpn.marropax.com) has quit (Remote host closed the connection)
+2020-06-03 19:51:26	dpfeiffer	MrElendig: cool, thanks. I'll have a look
+2020-06-03 19:51:40	-->	marropax (~marropax@vpn.marropax.com) has joined ##linux
+2020-06-03 19:51:41	-->	Voidablazer (~Voidablaz@2a02:214a:8104:a601:dd86:8f1e:dee5:1cd2) has joined ##linux
+2020-06-03 19:52:01	MrElendig	and that doesn't check for all shells
+2020-06-03 19:52:34	MrElendig	there are newer forks that does zsh/fish/stuff
+2020-06-03 19:52:43	-->	wallfly (~wallfly@69-165-140-10.dsl.teksavvy.com) has joined ##linux
+2020-06-03 19:53:05	-->	c59fdbdcfe7c (~c59fdbdcf@public-gprs652218.centertel.pl) has joined ##linux
+2020-06-03 19:53:37	<--	Dan39 (~dan@unaffiliated/dan39) has quit (Ping timeout: 264 seconds)
+2020-06-03 19:56:36	<--	c59fdbdcfe7c (~c59fdbdcf@public-gprs652218.centertel.pl) has quit (Read error: Connection reset by peer)
+2020-06-03 19:57:22	<--	gouf (~arch@2a02:ed2:f000:bbce:c8d0:5ee6:1c50:38f7) has quit (Quit: WeeChat 2.8)
+2020-06-03 19:58:10	-->	bolovanos (~bolovanos@ctrli.eu) has joined ##linux
+2020-06-03 19:58:25	ncuxo	is it better to use the freeipa dns server or it is better to use a seperate dns server and integrate it with the freeipa server? (by better I mean more secure)
+2020-06-03 19:58:27	<--	Stephanie (~Stephanie@147.10.165.69) has quit (Quit: Leaving)
+2020-06-03 19:59:02	SkunkyFone	um.  you could just run your own
+2020-06-03 19:59:16	<--	OERIAS (~OERIAS@209.14.0.44) has quit (Remote host closed the connection)
+2020-06-03 19:59:25	-->	c59fdbdcfe7c (~c59fdbdcf@user-5-173-185-145.play-internet.pl) has joined ##linux
+2020-06-03 20:00:09	<--	xz3r0 (~xz3r0@cpc149124-darl10-2-0-cust143.11-2.cable.virginm.net) has quit (Quit: This computer has gone to sleep)
+2020-06-03 20:00:44	<--	dan01 (~dan01@2a02:2f09:3d07:6800:7527:8211:8162:58bb) has quit
+2020-06-03 20:01:26	-->	gouf (~arch@2a02:ed2:f000:bbce:c8d0:5ee6:1c50:38f7) has joined ##linux
+2020-06-03 20:01:30	<--	Fenris (~Fenris@fsf/member/Fenris) has quit (Remote host closed the connection)
+2020-06-03 20:02:25	<--	lemonzest (~lemonzest@unaffiliated/lemonzest) has quit (Quit: Quitting)
+2020-06-03 20:02:47	<--	Zachary_DuBois (~Zachary_D@yukimorikawa.zacharydubois.net) has quit (Ping timeout: 240 seconds)
+2020-06-03 20:03:38	ncuxo	my tought process was that the seperation is another level of security but I wasn't sure and wanted to ask :D
+2020-06-03 20:03:47	<--	giesen (~ggiesen@ego.giesen.me) has quit (Ping timeout: 240 seconds)
+2020-06-03 20:03:58	-->	Fenris (~Fenris@fsf/member/Fenris) has joined ##linux
+2020-06-03 20:04:17	-->	jaysicks (~jaysicks@178-164-193-249.pool.digikabel.hu) has joined ##linux
+2020-06-03 20:05:30	<--	cmj (~c@2603:3023:30a:f300::c0ff:ee) has quit (Ping timeout: 246 seconds)
+2020-06-03 20:05:46	-->	danyspin97 (~danyspin9@liveunix.org) has joined ##linux
+2020-06-03 20:05:52	-->	lemonzest (~lemonzest@unaffiliated/lemonzest) has joined ##linux
+2020-06-03 20:05:54	<--	Fenris (~Fenris@fsf/member/Fenris) has quit (Remote host closed the connection)
+2020-06-03 20:06:04	<--	wisbit (~reddit@2a02:a03f:44f8:ed00:7936:c073:90ed:550d) has quit (Quit: Leaving)
+2020-06-03 20:06:08	-->	Rudd0 (~Rudd0@185.189.115.118) has joined ##linux
+2020-06-03 20:06:08	-->	Fenris (~Fenris@fsf/member/Fenris) has joined ##linux
+2020-06-03 20:06:13	danyspin97	is anyone using sndio on Linux?
+2020-06-03 20:06:21	MrElendig	someone does, yes
+2020-06-03 20:06:44	-->	giesen (~ggiesen@ego.giesen.me) has joined ##linux
+2020-06-03 20:07:26	-->	CoolerX (~coolerext@202.83.42.165) has joined ##linux
+2020-06-03 20:07:27	danyspin97	because I can't choose the soundcard used
+2020-06-03 20:07:45	danyspin97	it always uses the integrated one over the usb device
+2020-06-03 20:08:04	danyspin97	i have also tried to choose it from alsamixer (as sndio relay on alsa) but no luck
+2020-06-03 20:08:32	-->	brogon (~brogon@unaffiliated/brogon) has joined ##linux
+2020-06-03 20:09:17	<--	figuinhas (~pirilauam@a109-48-28-166.cpe.netcabo.pt) has quit (Quit: Leaving)
+2020-06-03 20:09:31	<--	slash_ (~slash_@030-245-128-083.dynamic.caiway.nl) has quit (Quit: Leaving)
+2020-06-03 20:09:34	<--	CoolerX (~coolerext@202.83.42.165) has quit (Client Quit)
+2020-06-03 20:10:27	<--	Cabanossi (~Cabanossi@ppp-88-217-92-207.dynamic.mnet-online.de) has quit (Ping timeout: 240 seconds)
+2020-06-03 20:10:31	-->	moniker- (~mon@unaffiliated/moniker-) has joined ##linux
+2020-06-03 20:10:32	-->	esotericnonsense (~esotericn@unaffiliated/esotericnonsense) has joined ##linux
+2020-06-03 20:11:30	-->	Emmanuel_Chanel (~Emmanuel_@ZN023224.ppp.dion.ne.jp) has joined ##linux
+2020-06-03 20:12:07	Grey_Code	Any ideas on mounting .bin files?
+2020-06-03 20:12:18	-->	Cabanossi (~Cabanossi@ppp-88-217-75-154.dynamic.mnet-online.de) has joined ##linux
+2020-06-03 20:12:27	-->	slash_ (~slash_@030-245-128-083.dynamic.caiway.nl) has joined ##linux
+2020-06-03 20:12:46	Grey_Code	I used to do it without bchunk and iat before.
+2020-06-03 20:13:35	<--	S|h|a|w|n (~shawn156@unaffiliated/shawn156) has quit (Read error: Connection reset by peer)
+2020-06-03 20:13:48	<--	hyper_dave (~hyper_dav@196.191.53.194) has quit (Ping timeout: 256 seconds)
+2020-06-03 20:13:55	<--	bolovanos (~bolovanos@ctrli.eu) has quit (Ping timeout: 260 seconds)
+2020-06-03 20:13:59	-->	cosimone (~cosimone@2001:b07:ae5:db26:9520:741c:a5e9:2223) has joined ##linux
+2020-06-03 20:14:00	<--	xcm (~xcm@ipd114.250.tellas.gr) has quit (Read error: Connection reset by peer)
+2020-06-03 20:14:26	<--	eljef (eljef@Home.Eljef.Me) has quit (Quit: eljef)
+2020-06-03 20:15:19	<--	jmckind (~jmckind@cpe-24-243-6-139.satx.res.rr.com) has quit (Quit: Konversation terminated!)
+2020-06-03 20:15:20	-->	eljef (eljef@Home.Eljef.Me) has joined ##linux
+2020-06-03 20:15:42	<--	dex1983 (~dex1983@faye.uberspace.de) has quit (Quit: The Lounge - https://thelounge.chat)
+2020-06-03 20:15:44	-->	macc24_ (~random@unaffiliated/maccraft) has joined ##linux
+2020-06-03 20:15:55	<--	macc24 (~random@unaffiliated/maccraft) has quit (Disconnected by services)
+2020-06-03 20:15:59	<--	AbedB (~AbedBhuty@bzq-79-182-45-242.red.bezeqint.net) has quit (Quit: Leaving)
+2020-06-03 20:15:59	--	macc24_ is now known as macc24
+2020-06-03 20:16:14	-->	xcm (~xcm@ipd114.250.tellas.gr) has joined ##linux
+2020-06-03 20:16:35	-->	udni1 (~Thunderbi@tmo-121-238.customers.d1-online.com) has joined ##linux
+2020-06-03 20:16:47	-->	dex1983 (~dex1983@faye.uberspace.de) has joined ##linux
+2020-06-03 20:16:48	-->	Tech_8 (~Tech_8@24.51.61.131) has joined ##linux
+2020-06-03 20:16:50	MrElendig	Grey_Code: depends on what is actually inside the .bin file
+2020-06-03 20:16:54	MrElendig	.bin is not a standard
+2020-06-03 20:17:13	MrElendig	can be anything from game art to operating systems
+2020-06-03 20:17:17	Tech_8	hi
+2020-06-03 20:18:31	<--	marropax (~marropax@vpn.marropax.com) has quit (Remote host closed the connection)
+2020-06-03 20:19:09	-->	halvors (~Thunderbi@ti0071a400-3547.bb.online.no) has joined ##linux
+2020-06-03 20:19:17	Grey_Code	oops
+2020-06-03 20:19:29	<--	udni (~Thunderbi@5.146.198.65) has quit (Ping timeout: 258 seconds)
+2020-06-03 20:19:30	--	udni1 is now known as udni
+2020-06-03 20:19:35	Grey_Code	MrElendig, it's a media file.
+2020-06-03 20:19:43	MrElendig	even firmware for "toys"
+2020-06-03 20:19:49	MrElendig	that doesn't tell me anything
+2020-06-03 20:20:07	Grey_Code	A disc image.
+2020-06-03 20:20:08	-->	InfosecTai (~InfosecTa@96.231.217.177) has joined ##linux
+2020-06-03 20:20:11	Grey_Code	Is that better?
+2020-06-03 20:20:25	Grey_Code	It has a cue file with it too.
+2020-06-03 20:20:42	<--	deavmi (~tbk@165.0.49.28) has quit (Read error: Connection reset by peer)
+2020-06-03 20:20:44	-->	marropax (~marropax@vpn.marropax.com) has joined ##linux
+2020-06-03 20:20:53	MrElendig	how was it created exactly
+2020-06-03 20:20:54	-->	deavmi (~tbk@165.0.49.28) has joined ##linux
+2020-06-03 20:21:03	<--	czwolf (~Cz@2607:5300:60:1176::1) has quit (Ping timeout: 260 seconds)
+2020-06-03 20:21:21	MrElendig	and you should have said you had a .cue file to begin with
+2020-06-03 20:21:41	Grey_Code	I downloaded it as a .rar file, and upon extraction I got the .bin file and the .cue file.
+2020-06-03 20:21:52	MrElendig	so pirate stuff
+2020-06-03 20:21:55	MrElendig	gotcha
+2020-06-03 20:21:57	MrElendig	:p
+2020-06-03 20:22:09	Grey_Code	Oh dear. A 20 year old game.
+2020-06-03 20:22:18	MrElendig	depending on *what* software created it, bchunk -> iso and mount that
+2020-06-03 20:22:18	Grey_Code	To be exact.
+2020-06-03 20:22:31	MrElendig	just buy it on steam/gogs for 3 bucks
+2020-06-03 20:22:36	MrElendig	much easier
+2020-06-03 20:22:54	Grey_Code	MrElendig, It's not available on Steam.
+2020-06-03 20:23:02	MrElendig	there is also cdemu but ymmv a lot with it
+2020-06-03 20:23:06	<--	Tech_8 (~Tech_8@24.51.61.131) has left ##linux
+2020-06-03 20:23:25	Grey_Code	I've extracted the contents multiple times before without cdemu nor bchunk.
+2020-06-03 20:23:29	Grey_Code	That's what puzzles me.
+2020-06-03 20:24:17	MrElendig	as said, depends on what is actually inside it
+2020-06-03 20:24:33	<--	smallville7123 (~manjaro-u@cpe-172-193-147-209.qld.foxtel.net.au) has quit (Remote host closed the connection)
+2020-06-03 20:24:39	Grey_Code	It's a directory structure inside.
+2020-06-03 20:25:07	<--	syntax_ (~syntax_@45.128.133.233) has quit (Quit: Leaving)
+2020-06-03 20:25:24	Grey_Code	or that's what I remember.
+2020-06-03 20:26:06	-->	czwolf (~Cz@2607:5300:60:1176::1) has joined ##linux
+2020-06-03 20:26:47	-->	complexnumber (~caleb@60-242-74-196.tpgi.com.au) has joined ##linux
+2020-06-03 20:27:19	akik	Grey_Code: what's the problem with bchunk?
+2020-06-03 20:27:48	-->	Stephanie (~Stephanie@147.10.165.69) has joined ##linux
+2020-06-03 20:27:53	<--	Dave_R (~Dave_R@home.amunra.co.uk) has quit (Quit: My machine has gone to sleep. ZZZzzz…)
+2020-06-03 20:28:01	Grey_Code	akik: I don't have a problem with bchunk - it's just that I could do it without installing it back then.
+2020-06-03 20:28:47	-->	Dave_R (~Dave_R@home.amunra.co.uk) has joined ##linux
+2020-06-03 20:29:10	Stephanie	OS: Microsoft Windows 10 Pro (x64)
+2020-06-03 20:30:32	MrElendig	Stephanie: https://i.pinimg.com/originals/9f/3e/be/9f3ebe23ca6767c3ae75567a16d5e889.jpg
+2020-06-03 20:30:37	jim	Stephanie, hmm?
+2020-06-03 20:31:05	Stephanie	I was just speaking to Jesus
+2020-06-03 20:31:12	Stephanie	Can you put me back onto him please?
+2020-06-03 20:31:13	Stephanie	:P
+2020-06-03 20:31:40	Grey_Code	I don't know if Jesus uses IRC.
+2020-06-03 20:31:47	Grey_Code	:)
+2020-06-03 20:31:57	jim	meetoo
+2020-06-03 20:32:01	<--	dbasinge (~dbasinge@ubuntu/member/dbasinge) has quit (Read error: Connection reset by peer)
+2020-06-03 20:32:23	-->	cmj (~c@2603:3023:30a:f300::c0ff:ee) has joined ##linux
+2020-06-03 20:32:41	<--	throstur (~throstur@unaffiliated/throstur) has quit (Ping timeout: 265 seconds)
+2020-06-03 20:32:57	-->	dbasinge (~dbasinge@ubuntu/member/dbasinge) has joined ##linux
+2020-06-03 20:33:02	-->	blip- (~blip-@unaffiliated/blip-) has joined ##linux
+2020-06-03 20:33:30	jim	Stephanie, what you osing about today?
+2020-06-03 20:33:39	<--	tsaka__ (~torstein@46.246.208.209.dsl.dyn.forthnet.gr) has quit (Ping timeout: 265 seconds)
+2020-06-03 20:35:47	-->	Hilbert (~Hilbert@p200300de7f022a01808f3ba28d278db6.dip0.t-ipconnect.de) has joined ##linux
+2020-06-03 20:36:50	PaddyF	people with a browser like chrome/chromium/firefox/opera can view plain text files when they are exported with nginx, right?
+2020-06-03 20:36:58	-->	Tazmainian (~Tazmain@unaffiliated/tazmain) has joined ##linux
+2020-06-03 20:37:41	akik	PaddyF: right
+2020-06-03 20:38:12	PaddyF	the next step would be gopher cause it can follow links, then html etc.
+2020-06-03 20:38:12	<--	pingfloyd (~pingfloyd@unaffiliated/pingfloyd) has quit (Read error: Connection reset by peer)
+2020-06-03 20:38:16	MrElendig	depends on what you mean by "exported"
+2020-06-03 20:38:29	MrElendig	and if you set the content-type correctly
+2020-06-03 20:38:54	<--	geowiesnot (~user@i15-les02-ix2-87-89-181-157.sfr.lns.abo.bbox.fr) has quit (Ping timeout: 240 seconds)
+2020-06-03 20:39:08	PaddyF	i look for a home for simple drafts
+2020-06-03 20:39:10	MrElendig	if you don't set the content-type correctly, then the browser might only offer a "save this" instead of rendering the text
+2020-06-03 20:39:13	<--	riverr (~riverr@dtgxw97k0zhnfpmqx28-4.rev.dnainternet.fi) has quit (Ping timeout: 252 seconds)
+2020-06-03 20:39:32	PaddyF	yes, i remember now
+2020-06-03 20:39:46	MrElendig	or refuse to do even that and flag it as "dangerous file" instead
+2020-06-03 20:39:48	jim	PaddyF, so, some remote server is running nginx, and you request a text file from it... it serves the file with text/plain mime type (right?), and your question about that, is "will chrome display it as a text file"?
+2020-06-03 20:40:14	Stephanie	I'm using Windows 10 Pro, jim
+2020-06-03 20:40:18	Stephanie	VGA: NVIDIA GeForce GTX 1060 3GB
+2020-06-03 20:40:19	PaddyF	jim: not exactly
+2020-06-03 20:40:20	Stephanie	CPU: Intel(R) Core(TM) i7-6700K CPU @ 4.00GHz (4.00GHz)
+2020-06-03 20:40:25	Stephanie	I'm a gamer
+2020-06-03 20:40:47	PaddyF	i look for a home for simple drafts to make my life easy but it should be easy for potential viewers also
+2020-06-03 20:40:48	-->	crabskuttles (~crabskutt@223.204.251.122) has joined ##linux
+2020-06-03 20:41:15	jim	Stephanie, oh, ok... do you also run linux somehow?
+2020-06-03 20:41:27	jim	or, want to?
+2020-06-03 20:41:50	MrElendig	s/gamer/troll/
+2020-06-03 20:42:26	Stephanie	jim, Yes, on my rescued desktop (8 GB DDR2, Intel Pentium Dual Core 1.8 GHz, 160 GB 7200 RPM HDD, NVIDIA GeForce 8400 GS 256 MB (better than the onboard Intel GMA))
+2020-06-03 20:42:46	Stephanie	I got it out of the scrap heap, doubled its ram (it had 4 GB) and Linux runs nicely
+2020-06-03 20:42:50	<--	moniker- (~mon@unaffiliated/moniker-) has quit (Remote host closed the connection)
+2020-06-03 20:43:01	jim	cool
+2020-06-03 20:43:11	Stephanie	MrElendig, s/gamer/Gamer & Troll
+2020-06-03 20:43:26	kevincs	at first I thought you were a bot
+2020-06-03 20:43:29	Stephanie	It's amazing what people throw away jim
+2020-06-03 20:43:30	Chr0meiCe2	i run windows 10 since i work in cyber sec and do malware analysis stuff and code c++ / win32 API.... but i run ubuntu serverss for by business and stuff and love linux too
+2020-06-03 20:43:38	Chr0meiCe2	i mix it up
+2020-06-03 20:43:44	Stephanie	jim, I run it 24/7 as its PSU is 180 W or so
+2020-06-03 20:43:48	Stephanie	As a headless server
+2020-06-03 20:44:05	jim	pretty good use for linux
+2020-06-03 20:44:08	Chr0meiCe2	for coding i prefer windows..... for servers, it must be linux hands down lol
+2020-06-03 20:44:10	kevincs	Stephanie: my company has made me throw out stuff better than what I have at home.. I throw it out into the boot of my car of course :)
+2020-06-03 20:44:26	Stephanie	Haha kevincs
+2020-06-03 20:44:57	Stephanie	Just make sure if you throw away any laptops, you double check they don't have a cellular capability or GPS device
+2020-06-03 20:45:01	PaddyF	now all the attention goes to the female nick
+2020-06-03 20:45:04	PaddyF	guys :)
+2020-06-03 20:45:12	--	Stephanie is now known as stevendale
+2020-06-03 20:45:23	--	Skeer_Away is now known as Skeer
+2020-06-03 20:45:30	stevendale	I'm actually homosexual, PaddyF
+2020-06-03 20:45:36	stevendale	If you want to get in bed together
+2020-06-03 20:45:45	PaddyF	stevendale: i am not interested in such details
+2020-06-03 20:46:07	<--	czwolf (~Cz@2607:5300:60:1176::1) has quit (Ping timeout: 240 seconds)
+2020-06-03 20:48:14	kevincs	well you could still get in bed.. but geek out on your computers or something lol
+2020-06-03 20:48:55	<--	fstd (~fstd@unaffiliated/fisted) has quit (Ping timeout: 260 seconds)
+2020-06-03 20:48:57	-->	fstd_ (~fstd@unaffiliated/fisted) has joined ##linux
+2020-06-03 20:49:03	<--	Voidablazer (~Voidablaz@2a02:214a:8104:a601:dd86:8f1e:dee5:1cd2) has quit (Quit: Void has left the building.)
+2020-06-03 20:49:22	--	fstd_ is now known as fstd
+2020-06-03 20:49:26	-->	hyper_dave (~hyper_dav@196.191.53.227) has joined ##linux
+2020-06-03 20:49:27	<--	slash_ (~slash_@030-245-128-083.dynamic.caiway.nl) has quit (Quit: Leaving)
+2020-06-03 20:49:32	<--	isunx (~isunx@n219078171224.netvigator.com) has quit (Quit: isunx)
+2020-06-03 20:49:48	Chr0meiCe2	reinterpret_cast<void *>(Voidablazer);
+2020-06-03 20:50:28	<--	ZombieChicken (~weechat@unaffiliated/forgottenwizard) has quit (Quit: WeeChat 2.7.1)
+2020-06-03 20:50:29	-->	slash_ (~slash_@030-245-128-083.dynamic.caiway.nl) has joined ##linux
+2020-06-03 20:50:29	<--	slash_ (~slash_@030-245-128-083.dynamic.caiway.nl) has quit (Max SendQ exceeded)
+2020-06-03 20:50:34	<--	ScottE (~ScottE@unaffiliated/scotte) has quit (Ping timeout: 265 seconds)
+2020-06-03 20:50:59	-->	slash_ (~slash_@030-245-128-083.dynamic.caiway.nl) has joined ##linux
+2020-06-03 20:51:27	<--	faceface (~faceface@unaffiliated/faceface) has quit (Quit: leaving)
+2020-06-03 20:52:19	<--	Grey_Code (~grey@42.106.181.130) has quit (Quit: Cheers!)
+2020-06-03 20:52:25	-->	czwolf (~Cz@2607:5300:60:1176::1) has joined ##linux
+2020-06-03 20:53:23	<--	well_laid_lawn (~Jean-luc@60-240-126-85.tpgi.com.au) has quit (Quit: WeeChat 2.8)
+2020-06-03 20:53:56	penguu	what terminal emulators do you use
+2020-06-03 20:55:15	rud0lf	powershell
+2020-06-03 20:55:25	-->	ScottE (~ScottE@unaffiliated/scotte) has joined ##linux
+2020-06-03 20:55:31	-->	EmmaT (~EmmaT@m83-185-32-249.cust.tele2.se) has joined ##linux
+2020-06-03 20:56:30	<--	gouf (~arch@2a02:ed2:f000:bbce:c8d0:5ee6:1c50:38f7) has quit (Remote host closed the connection)
+2020-06-03 20:56:49	penguu	is powershell a terminal ?
+2020-06-03 20:56:50	iflema	xterm +sb -bg black -fg grey
+2020-06-03 20:56:53	-->	IanJ (~IanJ@cpc137926-brom13-2-0-cust355.16-1.cable.virginm.net) has joined ##linux
+2020-06-03 20:57:10	penguu	i thought it was a shell program
+2020-06-03 20:57:54	-->	kish (~oracle@unaffiliated/oracle) has joined ##linux
+2020-06-03 20:58:25	<--	InfosecTai (~InfosecTa@96.231.217.177) has quit (Ping timeout: 246 seconds)
+2020-06-03 20:58:40	-->	petrvelicka (~petrvelic@5.102.56.3) has joined ##linux
+2020-06-03 20:59:11	aje	uxrvt -bg gray8 -fg bisque
+2020-06-03 20:59:14	-->	tsaka__ (~torstein@ppp-2-84-80-32.home.otenet.gr) has joined ##linux
+2020-06-03 20:59:25	<--	xcm (~xcm@ipd114.250.tellas.gr) has quit (Remote host closed the connection)
+2020-06-03 21:00:11	<--	self (~elf@unaffiliated/elf) has quit (Ping timeout: 246 seconds)
+2020-06-03 21:00:42	<--	czwolf (~Cz@2607:5300:60:1176::1) has quit (Ping timeout: 260 seconds)
+2020-06-03 21:01:44	iflema	konsole is ok but it will pull in a few deps. Its fun to use Ggnome one... on the occasions occasionally
+2020-06-03 21:01:57	penguu	do these have tabs ? aje iflema
+2020-06-03 21:02:05	iflema	ye
+2020-06-03 21:02:12	-->	xcm (~xcm@ipd114.250.tellas.gr) has joined ##linux
+2020-06-03 21:02:13	iflema	xterm
+2020-06-03 21:02:13	-->	Lord_of_Life_ (~Lord@unaffiliated/lord-of-life/x-0885362) has joined ##linux
+2020-06-03 21:02:14	iflema	no
+2020-06-03 21:02:33	<--	freshpassport (~freshpass@103.134.144.243) has quit (Quit: Textual IRC Client: www.textualapp.com)
+2020-06-03 21:03:10	iflema	penguu: there is tmux
+2020-06-03 21:03:10	-->	Guest20_ (~textual@103.215.168.1) has joined ##linux
+2020-06-03 21:03:19	-->	ejr (~ejr@178.115.130.224.wireless.dyn.drei.com) has joined ##linux
+2020-06-03 21:03:52	-->	faceface (~faceface@unaffiliated/faceface) has joined ##linux
+2020-06-03 21:04:02	<--	Lord_of_Life (~Lord@unaffiliated/lord-of-life/x-0885362) has quit (Ping timeout: 246 seconds)
+2020-06-03 21:04:02	--	Lord_of_Life_ is now known as Lord_of_Life
+2020-06-03 21:04:06	iflema	penguu: you could us rxvt and tmux for tabs
+2020-06-03 21:04:20	<--	Ceber (~cerberus@b9168fe3.cgn.dg-w.de) has quit (Ping timeout: 258 seconds)
+2020-06-03 21:04:34	penguu	just want something easy to setup and manage
+2020-06-03 21:04:49	iflema	look at tmux anyways
+2020-06-03 21:04:56	iflema	split and tab consoles
+2020-06-03 21:04:57	-->	czwolf (~Cz@2607:5300:60:1176::1) has joined ##linux
+2020-06-03 21:05:04	penguu	yses
+2020-06-03 21:05:10	-->	BennyBron (~BennyBron@2a00:a040:18a:e1f:b810:1539:4c73:7a38) has joined ##linux
+2020-06-03 21:05:14	iflema	ssh and what not
+2020-06-03 21:05:33	-->	Ridout (coffee@gateway/vpn/privateinternetaccess/b) has joined ##linux
+2020-06-03 21:05:34	<--	Guest20 (~textual@115.110.205.84) has quit (Ping timeout: 260 seconds)
+2020-06-03 21:05:51	BennyBron	hi, i have servers running cent os compiled from source without many commands. any way to restore them without nuk
+2020-06-03 21:05:54	-->	gouf (~arch@2a02:ed2:f000:bbce:c8d0:5ee6:1c50:38f7) has joined ##linux
+2020-06-03 21:05:57	BennyBron	nuking them?
+2020-06-03 21:05:59	-->	timemage (~timemage@unaffiliated/timemage) has joined ##linux
+2020-06-03 21:06:03	<--	cmj (~c@2603:3023:30a:f300::c0ff:ee) has quit (Ping timeout: 246 seconds)
+2020-06-03 21:06:49	iflema	replace all and add more?
+2020-06-03 21:07:00	BennyBron	how exactly?
+2020-06-03 21:07:06	iflema	binaries?
+2020-06-03 21:07:10	BennyBron	yes
+2020-06-03 21:07:11	penguu	i need drag and drop for example
+2020-06-03 21:07:25	iflema	k
+2020-06-03 21:07:37	penguu	copy paste
+2020-06-03 21:08:11	<--	truthr (~truthr@unaffiliated/truthr) has quit (Quit: ##politics-uncensored  https://www.youtube.com/watch?v=XnuJz174H9s)
+2020-06-03 21:08:14	<--	tsaka__ (~torstein@ppp-2-84-80-32.home.otenet.gr) has quit (Ping timeout: 246 seconds)
+2020-06-03 21:08:17	-->	udni1 (~Thunderbi@5.146.198.65) has joined ##linux
+2020-06-03 21:09:00	<--	udni (~Thunderbi@tmo-121-238.customers.d1-online.com) has quit (Read error: Connection reset by peer)
+2020-06-03 21:09:00	--	udni1 is now known as udni
+2020-06-03 21:09:25	<--	esp32_prog (~yoann@217.138.219.186) has quit (Quit: esp32_prog)
+2020-06-03 21:09:31	<--	BennyBron (~BennyBron@2a00:a040:18a:e1f:b810:1539:4c73:7a38) has quit (Client Quit)
+2020-06-03 21:10:46	-->	bolovanos (~bolovanos@ctrli.eu) has joined ##linux
+2020-06-03 21:11:22	iflema	wheres benny gone
+2020-06-03 21:11:42	-->	esp32_prog (~yoann@217.138.219.186) has joined ##linux
+2020-06-03 21:11:50	IanJ	penguu: copy paste works for me with <shift><ctrl>C <shift><ctrl>V
+2020-06-03 21:12:11	funksh0n	shift+ins works too
+2020-06-03 21:12:18	iflema	right click and midle click
+2020-06-03 21:12:34	-->	BluesKaj (Blues@gateway/vpn/privateinternetaccess/blueskaj) has joined ##linux
+2020-06-03 21:12:47	BluesKaj	'Morning all
+2020-06-03 21:12:57	funksh0n	hi
+2020-06-03 21:13:06	rindolf	BluesKaj: hey
+2020-06-03 21:13:32	BluesKaj	hey rindolf
+2020-06-03 21:13:33	<--	czwolf (~Cz@2607:5300:60:1176::1) has quit (Ping timeout: 260 seconds)
+2020-06-03 21:13:43	-->	brutser (574149f0@240.73-65-87.adsl-dyn.isp.belgacom.be) has joined ##linux
+2020-06-03 21:14:13	-->	isunx (~isunx@n219078171224.netvigator.com) has joined ##linux
+2020-06-03 21:14:21	rindolf	BluesKaj: sup?
+2020-06-03 21:14:30	-->	Zachary_DuBois (~Zachary_D@yukimorikawa.zacharydubois.net) has joined ##linux
+2020-06-03 21:15:16	-->	bigRoo (~user@131.236.54.155) has joined ##linux
+2020-06-03 21:15:28	<--	oiaohm (~oiaohm@unaffiliated/oiaohm) has quit (Remote host closed the connection)
+2020-06-03 21:15:52	-->	oiaohm (~oiaohm@unaffiliated/oiaohm) has joined ##linux
+2020-06-03 21:15:58	-->	Led_Zeppelin (~user@cpe-68-172-248-139.nj.res.rr.com) has joined ##linux
+2020-06-03 21:16:17	<--	BluesKaj (Blues@gateway/vpn/privateinternetaccess/blueskaj) has quit (Read error: No route to host)
+2020-06-03 21:16:26	<--	udni (~Thunderbi@5.146.198.65) has quit (Read error: Connection timed out)
+2020-06-03 21:16:48	-->	sumagna (~sumagna@116.206.200.222) has joined ##linux
+2020-06-03 21:17:05	<--	sumagna (~sumagna@116.206.200.222) has quit (Read error: No route to host)
+2020-06-03 21:17:12	<--	Ridout (coffee@gateway/vpn/privateinternetaccess/b) has quit (Read error: No route to host)
+2020-06-03 21:17:12	<--	Zachary_DuBois (~Zachary_D@yukimorikawa.zacharydubois.net) has quit (Read error: No route to host)
+2020-06-03 21:17:31	-->	Zachary_DuBois (~Zachary_D@yukimorikawa.zacharydubois.net) has joined ##linux
+2020-06-03 21:17:34	-->	sumagna (~sumagna@116.206.200.222) has joined ##linux
+2020-06-03 21:17:35	-->	Ridout (coffee@gateway/vpn/privateinternetaccess/b) has joined ##linux
+2020-06-03 21:17:41	-->	czwolf (~Cz@2607:5300:60:1176::1) has joined ##linux
+2020-06-03 21:18:10	-->	BluesKaj (Blues@gateway/vpn/privateinternetaccess/blueskaj) has joined ##linux
+2020-06-03 21:18:40	-->	Dan39 (~dan@unaffiliated/dan39) has joined ##linux
+2020-06-03 21:18:48	-->	rewrited (~rewrited@unaffiliated/rewrited) has joined ##linux
+2020-06-03 21:19:09	 *	kreyren found https://wtfismyip.com/
+2020-06-03 21:19:13	kreyren	it's great~
+2020-06-03 21:19:59	-->	udni (~Thunderbi@2a02:908:697:ede0:3b16:b7da:f29f:f0ec) has joined ##linux
+2020-06-03 21:20:13	aje	penguu: no tabs in rxvt
+2020-06-03 21:20:17	aje	but you can use tmux. I do all the time
+2020-06-03 21:20:29	aje	urxvt is very lightweight and makes me feel like I'm in the 90es again
+2020-06-03 21:20:45	penguu	ok
+2020-06-03 21:21:28	IanJ	I use tmux on remote machines but not for tabs on a local terminal, I don't like nesting tmux. I always use a terminal that supports tabs locally.
+2020-06-03 21:21:29	-->	cdown_ (~cdown@163.114.131.1) has joined ##linux
+2020-06-03 21:21:53	IanJ	urxvt is ugly as hell out te box and is all manual editing of config files to set up. It's not exactly a friendly terminal.
+2020-06-03 21:22:06	<--	faceface (~faceface@unaffiliated/faceface) has quit (Quit: leaving)
+2020-06-03 21:22:18	-->	faceface (~faceface@unaffiliated/faceface) has joined ##linux
+2020-06-03 21:22:32	funksh0n	It used to have problems with unicode too.
+2020-06-03 21:22:42	IanJ	ironic
+2020-06-03 21:22:56	winny	it still has problems with some unicode
+2020-06-03 21:22:58	-->	smallville7123 (~manjaro-u@cpe-172-193-147-209.qld.foxtel.net.au) has joined ##linux
+2020-06-03 21:23:25	<--	bolovanos (~bolovanos@ctrli.eu) has quit (Ping timeout: 272 seconds)
+2020-06-03 21:23:43	G3nka1	Since I am not sure where to find help for these tools, I am asking here. So I build neon 0.29 from source https://github.com/notroj/neon/releases to use openssl, now I have to build davfs2 with this neon the ./configure finishes successfully but when I do make I get a lot of undefined references to ne_* in davfs. I even tried with different neon versions https://github.com/volga629/davfs2/blob/8bad5be1e370d527f89144cfbfe64f6a0a014390/NEWS but was
+2020-06-03 21:23:43	G3nka1	of now help.
+2020-06-03 21:24:14	<--	cdown (~cdown@89.32.122.5) has quit (Ping timeout: 260 seconds)
+2020-06-03 21:24:24	--	cdown_ is now known as cdown
+2020-06-03 21:24:30	-->	di0_ (~di0_@unaffiliated/di0-/x-5053590) has joined ##linux
+2020-06-03 21:24:36	<--	faceface (~faceface@unaffiliated/faceface) has quit (Client Quit)
+2020-06-03 21:24:41	<--	rjpower4 (~rpower@2601:249:4280:4c80::e406) has quit (Ping timeout: 252 seconds)
+2020-06-03 21:24:53	-->	faceface (~faceface@unaffiliated/faceface) has joined ##linux
+2020-06-03 21:25:38	<--	Trieste (~T@unaffiliated/trieste) has quit (Ping timeout: 260 seconds)
+2020-06-03 21:26:02	G3nka1	make seems to fail even with default libs/headers downloaded from a package manager. Weird
+2020-06-03 21:27:20	-->	Trieste (~T@unaffiliated/trieste) has joined ##linux
+2020-06-03 21:27:53	G3nka1	Ah nm, I think its an issue with this release of davfs
+2020-06-03 21:28:22	faceface	hello
+2020-06-03 21:28:45	<--	sumagna (~sumagna@116.206.200.222) has quit (Quit: Bye guys)
+2020-06-03 21:29:00	-->	enriooooooo (~nanoz@unaffiliated/nanoz) has joined ##linux
+2020-06-03 21:29:18	<--	czwolf (~Cz@2607:5300:60:1176::1) has quit (Ping timeout: 260 seconds)
+2020-06-03 21:29:20	<--	Salastil (~weechat@212.102.45.38) has quit (Read error: Connection reset by peer)
+2020-06-03 21:29:35	IanJ	penguu: I'm using lxterminal at the moment. it has tabs, modifyable key bindings and basic gui config. Take a look at it, might suit your needs.
+2020-06-03 21:29:37	faceface	I'm seeing this error in /var/log/mail.log: https://termbin.com/xvmt
+2020-06-03 21:29:44	-->	dez (uid92154@fedora/deSouza) has joined ##linux
+2020-06-03 21:30:01	--	tomscherlAfk is now known as tomscherl
+2020-06-03 21:30:15	faceface	I guess I setup "munin" somewhere... how to debug? I don't knwo what process is sending this mail
+2020-06-03 21:30:51	faceface	I guess I'll just create that user?
+2020-06-03 21:31:15	faceface	else can I work out what process is trying to send that mail?
+2020-06-03 21:32:30	-->	yggdrasil (~yggdrasil@unaffiliated/yggdrasil) has joined ##linux
+2020-06-03 21:33:06	-->	mattallmill (~wildcat@ip72-205-232-16.ks.ks.cox.net) has joined ##linux
+2020-06-03 21:33:13	<--	srji (~srji@h2791663.stratoserver.net) has quit (Quit: leaving)
+2020-06-03 21:33:14	<--	fightthewalrus (~maomkosdj@KD113148020047.ppp-bb.dion.ne.jp) has quit (Ping timeout: 264 seconds)
+2020-06-03 21:33:16	<--	yggdrasi1 (~yggdrasil@unaffiliated/yggdrasil) has quit (Read error: Connection reset by peer)
+2020-06-03 21:33:31	-->	srji (~srji@h2791663.stratoserver.net) has joined ##linux
+2020-06-03 21:33:52	<--	isunx (~isunx@n219078171224.netvigator.com) has quit (Quit: isunx)
+2020-06-03 21:33:52	timemage	faceface, i take it localhost is the same machine as mail.geromics.co.uk
+2020-06-03 21:34:00	-->	tsaka__ (~torstein@ppp-2-84-80-32.home.otenet.gr) has joined ##linux
+2020-06-03 21:34:05	<--	funksh0n (~funksh0n@host86-141-48-169.range86-141.btcentralplus.com) has quit (Quit: leaving)
+2020-06-03 21:34:11	faceface	yup
+2020-06-03 21:34:19	faceface	at least... yeah, that's where the logs are
+2020-06-03 21:34:29	-->	funksh0n (~funksh0n@host86-141-48-169.range86-141.btcentralplus.com) has joined ##linux
+2020-06-03 21:35:13	timemage	faceface, so then you have some script set up that's running the sendmail commandline?
+2020-06-03 21:35:36	faceface	also seeing similar "User doesn't exist" messages for root@mail.geromics.co.uk
+2020-06-03 21:35:55	faceface	timemage: I dont know, there are a few things running on this box
+2020-06-03 21:36:07	faceface	one of them could be configured to talk to muin
+2020-06-03 21:36:11	-->	AnySomebody (~AnySomebo@p200300c2870e54858612d429339a3e52.dip0.t-ipconnect.de) has joined ##linux
+2020-06-03 21:36:12	faceface	munin
+2020-06-03 21:36:18	<--	BluesKaj (Blues@gateway/vpn/privateinternetaccess/blueskaj) has quit (Quit: Konversation terminated!)
+2020-06-03 21:36:18	-->	geowiesnot (~user@i15-les02-ix2-87-89-181-157.sfr.lns.abo.bbox.fr) has joined ##linux
+2020-06-03 21:36:25	faceface	Not sure how to debug
+2020-06-03 21:36:40	timemage	faceface, well, you may able to turn on log files for the various command-line programs that send mail.
+2020-06-03 21:37:19	faceface	so there is no way to work out what process is trying to send mail from the mail logs?
+2020-06-03 21:37:20	-->	mowcat (~mowcat@cpc105070-sgyl40-2-0-cust722.18-2.cable.virginm.net) has joined ##linux
+2020-06-03 21:37:23	-->	BluesKaj (Blues@gateway/vpn/privateinternetaccess/blueskaj) has joined ##linux
+2020-06-03 21:37:24	timemage	faceface, and look at cron files for those with a MAILTO in them.
+2020-06-03 21:37:43	<--	stevendale (~Stephanie@147.10.165.69) has quit (Quit: Leaving)
+2020-06-03 21:38:05	braindead_	i cant restart apache2 because it says "write error: No space left on device"
+2020-06-03 21:38:14	-->	sdoherty (~sdoherty@pool-100-0-19-58.bstnma.fios.verizon.net) has joined ##linux
+2020-06-03 21:38:25	braindead_	that was true but i removed stuff and now have free space available
+2020-06-03 21:38:43	braindead_	restarted server already but still get the same error
+2020-06-03 21:38:50	<--	binTrl (~binaryTra@2409:4064:2099:d5b1:eef7:cc98:6ba1:4bcb) has quit (Quit: WeeChat 2.8)
+2020-06-03 21:38:50	<--	Fenris (~Fenris@fsf/member/Fenris) has quit (Remote host closed the connection)
+2020-06-03 21:38:54	faceface	braindead_: what does df -h say?
+2020-06-03 21:39:05	braindead_	60% use
+2020-06-03 21:39:13	faceface	is there only one partition?
+2020-06-03 21:39:25	braindead_	yes
+2020-06-03 21:39:31	faceface	60% of what?
+2020-06-03 21:39:36	<--	enriooooooo (~nanoz@unaffiliated/nanoz) has quit (Ping timeout: 258 seconds)
+2020-06-03 21:39:58	braindead_	du -sh shows 284K though. not sure was that command does but internet said i should check that too
+2020-06-03 21:40:00	faceface	is apache trying to use /tmp?
+2020-06-03 21:40:07	-->	czwolf (~Cz@2607:5300:60:1176::1) has joined ##linux
+2020-06-03 21:40:14	faceface	du stands for Disk Usage
+2020-06-03 21:40:45	-->	theelous3 (~theelous3@unaffiliated/theelous3) has joined ##linux
+2020-06-03 21:41:31	-->	Fenris (~Fenris@fsf/member/Fenris) has joined ##linux
+2020-06-03 21:41:41	-->	Kruppt (~Kruppt@50.111.15.150) has joined ##linux
+2020-06-03 21:42:20	-->	Salastil (~weechat@212.102.45.38) has joined ##linux
+2020-06-03 21:42:20	<--	cd (~cd@unaffiliated/cd) has quit (Quit: cd)
+2020-06-03 21:42:29	<--	jetchisel (~jetchisel@opensuse/member/jetchisel) has quit (Quit: Unfortunately time is always against us -- [Morpheus])
+2020-06-03 21:42:32	timemage	braindead_, 284K ?
+2020-06-03 21:42:35	<--	crabskuttles (~crabskutt@223.204.251.122) has quit (Quit: Do widzenia)
+2020-06-03 21:42:56	braindead_	hold on.. sorry, there was someting wrong on my side with the no space error message
+2020-06-03 21:43:19	braindead_	that 284K is the output of du -sh timemage, yes
+2020-06-03 21:43:38	-->	crabskuttles (~crabskutt@mx-ll-223.204.251-122.dynamic.3bb.co.th) has joined ##linux
+2020-06-03 21:43:49	<--	dinis (~root@150.red-88-29-215.staticip.rima-tde.net) has quit (Ping timeout: 258 seconds)
+2020-06-03 21:43:53	braindead_	but the write error is not related to my apache restart problem
+2020-06-03 21:44:05	timemage	braindead_, and that seems like... a large amount of free space to have available? =)   are you doing this on an embedded system or something?
+2020-06-03 21:44:46	<--	TJ- (~root@51.155.44.233) has quit (Read error: Connection reset by peer)
+2020-06-03 21:44:49	braindead_	lets forget everything i wrote the last minute please. new approach now:
+2020-06-03 21:45:23	-->	TJ- (~root@51.155.44.233) has joined ##linux
+2020-06-03 21:45:29	braindead_	i try to 'service apache2 restart' and it fails and says i should check "journalctl -xe" for details
+2020-06-03 21:45:48	braindead_	when i look there, no recent entries are available
+2020-06-03 21:46:12	<--	petrvelicka (~petrvelic@5.102.56.3) has quit (Remote host closed the connection)
+2020-06-03 21:46:16	-->	albethere (~albethere@cpe-24-198-73-27.maine.res.rr.com) has joined ##linux
+2020-06-03 21:46:41	<--	albethere (~albethere@cpe-24-198-73-27.maine.res.rr.com) has quit (Remote host closed the connection)
+2020-06-03 21:47:01	-->	`Tim (~timeo@unaffiliated/timeo) has joined ##linux
+2020-06-03 21:47:08	braindead_	is there another way to see what causes the error maybe?
+2020-06-03 21:48:11	braindead_	when i do 'systemctl status apache2.service' i geht failed with cod=exited, status=139
+2020-06-03 21:48:22	<--	ejr (~ejr@178.115.130.224.wireless.dyn.drei.com) has quit (Quit: leaving)
+2020-06-03 21:49:20	timemage	braindead_, a core dump it seems
+2020-06-03 21:49:43	<--	PaddyF (~PaddyF@p200300def7437397d426404e29cf29a7.dip0.t-ipconnect.de) has quit (Quit: bye)
+2020-06-03 21:50:35	<--	Guest20_ (~textual@103.215.168.1) has quit (Quit: ZZZzzz…)
+2020-06-03 21:51:50	-->	Joah (joe@unaffiliated/joah) has joined ##linux
+2020-06-03 21:52:06	-->	pta2002 (~quassel@104.248.23.110) has joined ##linux
+2020-06-03 21:52:46	<--	invra (~invra@ec2-35-180-55-254.eu-west-3.compute.amazonaws.com) has quit (Quit: WeeChat 2.3)
+2020-06-03 21:52:54	--	Skeer is now known as Skeer_Away
+2020-06-03 21:52:55	-->	cmj (~c@2603:3023:30a:f300::c0ff:ee) has joined ##linux
+2020-06-03 21:54:59	-->	moniker- (~mon@unaffiliated/moniker-) has joined ##linux
+2020-06-03 21:55:19	-->	PaddyF (~PaddyF@p200300def7437397d426404e29cf29a7.dip0.t-ipconnect.de) has joined ##linux
+2020-06-03 21:55:26	-->	ZeekL (Zeek@cpe-66-66-246-7.rochester.res.rr.com) has joined ##linux
+2020-06-03 21:56:11	-->	pingfloyd (~pingfloyd@unaffiliated/pingfloyd) has joined ##linux
+2020-06-03 21:56:11	<--	macc24 (~random@unaffiliated/maccraft) has quit (Quit: WeeChat 2.8)
+2020-06-03 21:56:22	-->	Haudegen (~quassel@91.114.49.10) has joined ##linux
+2020-06-03 21:58:07	-->	mIk3_08 (~Thunderbi@unaffiliated/mik3-08/x-1549088) has joined ##linux
+2020-06-03 21:58:26	-->	stealintv (stealintv@gateway/shell/xshellz/x-atzxfierpjypszaa) has joined ##linux
+2020-06-03 21:58:32	rud0lf	out of curiosity, what's wrong with `grep '[a-f]+' /usr/share/dict/words` ?
+2020-06-03 21:58:33	-->	invra (~invra@185.241.29.217) has joined ##linux
+2020-06-03 21:58:48	rud0lf	it's supposed to list words like "beef" "cafe" or "dead"
+2020-06-03 21:58:58	funksh0n	I was just doing some spring cleaning in my home folder and .Xauthority contains what looks like a hex dump.
+2020-06-03 21:59:19	<--	geowiesnot (~user@i15-les02-ix2-87-89-181-157.sfr.lns.abo.bbox.fr) has quit (Ping timeout: 246 seconds)
+2020-06-03 21:59:47	funksh0n	I can't cat it out
+2020-06-03 22:00:28	timemage	rud0lf, \+
+2020-06-03 22:00:53	-->	macc24 (~random@unaffiliated/maccraft) has joined ##linux
+2020-06-03 22:01:34	rud0lf	timemage: nice, but what's wrong with + ?
+2020-06-03 22:01:35	timemage	rud0lf, also, you'd need ^ and $ probably
+2020-06-03 22:01:49	funksh0n	Anyone know what's going on with my .Xauthority?  Is this normal? https://imgur.com/a/jfnkvjZ
+2020-06-03 22:02:16	timemage	rud0lf, depending no the regular expression engine and its setting some character are "magic" and some arn't.  * and + often aren't in the same set that way.
+2020-06-03 22:02:31	rud0lf	i see, thank you for explanation
+2020-06-03 22:03:16	-->	MassDebates (~MassDebat@unaffiliated/massdebates) has joined ##linux
+2020-06-03 22:03:24	timemage	rud0lf, so: '^[a-f]+$'   would be single character "words" followed by a plus sign.   with the \ in there it's one-or-more of a-f and bracketed by the ^$ so you're talking about the entire line.
+2020-06-03 22:03:54	<--	Ridout (coffee@gateway/vpn/privateinternetaccess/b) has quit (Quit: Lost terminal)
+2020-06-03 22:04:15	-->	isunx (~isunx@n219078171224.netvigator.com) has joined ##linux
+2020-06-03 22:05:23	-->	urodna (~urodna@unaffiliated/urodna) has joined ##linux
+2020-06-03 22:05:30	-->	raf (~soyyo@unaffiliated/rafael-cunha/x-5167236) has joined ##linux
+2020-06-03 22:06:07	rud0lf	thank you
+2020-06-03 22:06:09	-->	jkwnki (~jkwnki@p200300cd472b60001e1bb5fffe7a47f7.dip0.t-ipconnect.de) has joined ##linux
+2020-06-03 22:06:37	<--	cmj (~c@2603:3023:30a:f300::c0ff:ee) has quit (Ping timeout: 260 seconds)
+2020-06-03 22:07:21	--	Skeer_Away is now known as Skeer
+2020-06-03 22:07:56	-->	WishBoy (~WishBoy@unaffiliated/wishboy) has joined ##linux
+2020-06-03 22:08:33	-->	crashoverride (~theo@37-97-151-99.colo.transip.net) has joined ##linux
+2020-06-03 22:08:41	crashoverride	hi
+2020-06-03 22:08:55	crashoverride	So, I'm attempting to read from /proc/net/dev with an unprivileged user; and I get only 0s everywhere.
+2020-06-03 22:09:00	crashoverride	Is there a quick "fix" to that?
+2020-06-03 22:09:37	crashoverride	I tried to setcap the program that reads this file with cap_net_admin,cap_net_raw+eip but it does not seem to do the trick.
+2020-06-03 22:09:57	<--	WishBoy (~WishBoy@unaffiliated/wishboy) has quit (Client Quit)
+2020-06-03 22:10:08	tds	what do you get if you just cat it as that user?
+2020-06-03 22:10:28	crashoverride	everything the same, with 0s instead of the actual values.
+2020-06-03 22:10:39	--	xcm is now known as Guest81349
+2020-06-03 22:10:40	<--	Guest81349 (~xcm@ipd114.250.tellas.gr) has quit (Killed (weber.freenode.net (Nickname regained by services)))
+2020-06-03 22:10:46	tds	and if you cat as root you get the correct values?
+2020-06-03 22:10:53	crashoverride	yes.
+2020-06-03 22:11:19	<--	Joah (joe@unaffiliated/joah) has quit (Quit: joe)
+2020-06-03 22:11:39	-->	xcm (~xcm@ipd114.250.tellas.gr) has joined ##linux
+2020-06-03 22:12:39	promach3	Could anyone help with https://github.com/OP-TEE/optee_os/issues/3902#issuecomment-638151200 ?
+2020-06-03 22:12:56	tds	crashoverride: hm, what kernel is this? looking at a recent source tree, i can't see how that would happen
+2020-06-03 22:13:10	crashoverride	tds: http://ix.io/2oaF
+2020-06-03 22:13:31	crashoverride	it might be a "bit old"(tm).
+2020-06-03 22:13:39	zamba	is it possible to "symlink over, delete under" on the fs?
+2020-06-03 22:13:43	<--	yunhao94 (~yunhao94@183.198.141.11) has quit (Ping timeout: 258 seconds)
+2020-06-03 22:14:19	tds	crashoverride: also, how tied to using /proc/net/dev are you? using netlink may be nicer (and might actually work)
+2020-06-03 22:14:34	crashoverride	yeah it's not my own code, so...
+2020-06-03 22:15:11	zamba	nevermind.. i'll just use a simple move operation, as that is atomic
+2020-06-03 22:15:19	crashoverride	I mean, I was actually thinking to just write a quick and dirty C program to parse those values (so I could even suid it if I wanted) and get the other program to pase that.
+2020-06-03 22:15:33	crashoverride	but I thought "maybe there's a quickfix"
+2020-06-03 22:15:35	tds	crashoverride: ahh, https://stackoverflow.com/questions/8955724/regular-user-cant-read-proc-net-dev has details
+2020-06-03 22:15:41	-->	yunhao94 (~yunhao94@183.198.141.11) has joined ##linux
+2020-06-03 22:15:45	-->	enriooooooo (~nanoz@unaffiliated/nanoz) has joined ##linux
+2020-06-03 22:15:49	-->	CrystalMath (~coderain@reactos/developer/theflash) has joined ##linux
+2020-06-03 22:15:49	crashoverride	I'm running 4.9.73
+2020-06-03 22:15:55	crashoverride	so yeah it's not recent.
+2020-06-03 22:16:01	crashoverride	not "old" as in "debian old"
+2020-06-03 22:16:06	crashoverride	but still, not recent.
+2020-06-03 22:16:21	tds	that's recent enough, 4.8 is still longterm, but see that link for an explanation ;)
+2020-06-03 22:16:26	tds	er, 4.9, even!
+2020-06-03 22:16:31	crashoverride	yeah ok guilty
+2020-06-03 22:16:33	crashoverride	grsec in.
+2020-06-03 22:16:50	crashoverride	so short of suid there's nothing I can do...
+2020-06-03 22:16:59	crashoverride	I mean, I'm out of motivation for screaming.
+2020-06-03 22:17:09	crashoverride	and running the default kernel isn't really an option.
+2020-06-03 22:17:16	crashoverride	ok well I'll write my own wrapper.
+2020-06-03 22:17:33	tds	yeah, a setuid wrapper that reads it is probably easiest
+2020-06-03 22:17:38	-->	throstur (~throstur@unaffiliated/throstur) has joined ##linux
+2020-06-03 22:17:52	crashoverride	and the least intrusive.
+2020-06-03 22:18:01	crashoverride	thanks a lot tds
+2020-06-03 22:18:03	crashoverride	:)
+2020-06-03 22:18:07	-->	dviola (~diego@unaffiliated/dviola) has joined ##linux
+2020-06-03 22:18:19	<--	dudenugget2000 (~dudenugge@c-66-30-175-28.hsd1.ma.comcast.net) has quit (Ping timeout: 258 seconds)
+2020-06-03 22:18:19	<--	subprime (subprime@gateway/vpn/nordvpn/subprime) has quit (Read error: Connection reset by peer)
+2020-06-03 22:18:23	-->	comicsansgreenki (~Thunderbi@174-109-188-206.rev.knet.ca) has joined ##linux
+2020-06-03 22:18:38	Kyoon	near one of these https://brickseek.com/walmart-inventory-checker/?sku=902037635 ? sale right now for gaming desktop if youre lucky for $150...id be willing to pay double for your time/effort if you have one in your area
+2020-06-03 22:18:52	V7	Do we need a public key to connect from client side
+2020-06-03 22:18:53	V7	?
+2020-06-03 22:18:59	-->	subprime (subprime@gateway/vpn/nordvpn/subprime) has joined ##linux
+2020-06-03 22:19:04	djph	V7: huh?
+2020-06-03 22:19:06	tds	crashoverride: if you're completely crazy, I wonder if you could mount a fuse thing over /proc/net/dev that is running as root and does the read for you
+2020-06-03 22:19:13	tds	then your application wouldn't even need to know about it :D
+2020-06-03 22:19:31	<--	discovered (~discovere@unaffiliated/discovered) has quit (Read error: Connection reset by peer)
+2020-06-03 22:19:34	funksh0n	V7: If the server has a copy of your public key, you can connect using your private key
+2020-06-03 22:19:36	V7	djph: I mean, should client have a public key to connect through SSH?
+2020-06-03 22:19:39	-->	dudenugget2000 (~dudenugge@c-66-30-175-28.hsd1.ma.comcast.net) has joined ##linux
+2020-06-03 22:19:58	djph	V7: the "client" connects using their PRIVATE key to a "server" that has a copy of their PUBLIC.
+2020-06-03 22:20:00	V7	Is not a private enough?
+2020-06-03 22:20:06	<--	curloxide (~Thunderbi@174-109-188-206.rev.knet.ca) has quit (Ping timeout: 256 seconds)
+2020-06-03 22:20:07	--	comicsansgreenki is now known as curloxide
+2020-06-03 22:20:12	<--	dbasinge (~dbasinge@ubuntu/member/dbasinge) has quit (Quit: ZNC 1.7.5 - https://znc.in)
+2020-06-03 22:20:15	-->	zebrag (~inkbottle@aaubervilliers-654-1-108-98.w86-212.abo.wanadoo.fr) has joined ##linux
+2020-06-03 22:20:20	<--	inkbottle (~inkbottle@aaubervilliers-654-1-106-85.w86-212.abo.wanadoo.fr) has quit (Ping timeout: 246 seconds)
+2020-06-03 22:20:25	-->	discovered (~discovere@unaffiliated/discovered) has joined ##linux
+2020-06-03 22:20:45	funksh0n	you need a public and a private key pair V7.  Give out the public key to everyone, put it on your servers, just keep your private key priavte
+2020-06-03 22:20:49	V7	djph: Of course, server has to have a public key, but does the client must have it?
+2020-06-03 22:21:09	funksh0n	V7: the client needs the private key
+2020-06-03 22:21:14	V7	Sorry, I might did not ask correctly.
+2020-06-03 22:21:25	-->	comicsansgreenki (~Thunderbi@174-109-188-206.rev.knet.ca) has joined ##linux
+2020-06-03 22:21:34	crashoverride	tds: that's a bit nuts.
+2020-06-03 22:21:40	crashoverride	tds: esp for just grepping some values...
+2020-06-03 22:21:40	tds	:)
+2020-06-03 22:21:42	V7	Would this work: Server has Public, Client has Private? Or it should be: Server has Public, Client has Public + Private?
+2020-06-03 22:21:52	-->	AnyS0mebody (~AnySomebo@p200300c2870e54422b371605afcb6f25.dip0.t-ipconnect.de) has joined ##linux
+2020-06-03 22:21:55	djph	V7: let's say you're running ssh v7@example.com --> "example.com" will have your PUBLIC KEY .  YOU will have your PRIVATE KEY.
+2020-06-03 22:22:01	-->	dbasinge (~dbasinge@ubuntu/member/dbasinge) has joined ##linux
+2020-06-03 22:22:03	crashoverride	tds: it's MUCH easier to just write a simple filter in C that fread that and is suid.
+2020-06-03 22:22:06	funksh0n	I think you need to read up on public/private keypair V7.
+2020-06-03 22:22:10	V7	djph: The question is another
+2020-06-03 22:22:13	crashoverride	tds: also much easier to securize.
+2020-06-03 22:22:14	<--	S4ren (~S4ren@2a00:23c6:3189:800:1c52:2ef1:674e:9f4c) has quit (Quit: Leaving)
+2020-06-03 22:22:18	V7	Oh dear ...
+2020-06-03 22:22:19	djph	V7: (technically, you'll have both, but, that's because you generated both)
+2020-06-03 22:22:20	crashoverride	anyway
+2020-06-03 22:22:23	crashoverride	hi djph
+2020-06-03 22:22:26	V7	OH DEAR
+2020-06-03 22:22:27	djph	'sup crashoverride
+2020-06-03 22:22:34	crashoverride	I'm gonna jet from here, catch me elsewhere :P
+2020-06-03 22:22:35	crashoverride	o/
+2020-06-03 22:22:37	<--	crashoverride (~theo@37-97-151-99.colo.transip.net) has left ##linux
+2020-06-03 22:22:41	V7	Please, may I ask you read the question carefully first of all?
+2020-06-03 22:22:53	djph	V7: I did.  You're confused.
+2020-06-03 22:22:55	-->	jnt_ (~jnt@dyndsl-091-248-051-016.ewe-ip-backbone.de) has joined ##linux
+2020-06-03 22:22:56	V7	Already have rephrased 4 times
+2020-06-03 22:23:03	V7	I am not.
+2020-06-03 22:23:06	V7	The question is ...
+2020-06-03 22:23:22	rascul	how many licks does it take to get to the center of a tootsie pop?
+2020-06-03 22:23:34	djph	V7: YOU (the client) will have YOUR PRIVATE KEY when connecting to a remote host (the server) that has a copy of YOUR PUBLIC in the authorized_keys file.
+2020-06-03 22:23:36	V7	Does the client HAVE to have BOTH Public+Private keys to connect to a server which already HAS a PUBLIC one ...
+2020-06-03 22:23:48	V7	...
+2020-06-03 22:23:54	funksh0n	no just the private for client, public for server
+2020-06-03 22:23:58	V7	THank you!!!
+2020-06-03 22:23:59	V7	OH GOD
+2020-06-03 22:24:03	djph	V7: what part of "you use your PRIVATE KEY to authorize" is difficult?
+2020-06-03 22:24:23	<--	Strykar (~wakka@unaffiliated/strykar) has quit (Quit: /quit)
+2020-06-03 22:24:24	<--	AnySomebody (~AnySomebo@p200300c2870e54858612d429339a3e52.dip0.t-ipconnect.de) has quit (Ping timeout: 256 seconds)
+2020-06-03 22:24:38	V7	djph: Because some client asks for a public key! I mean, it's even possible to generate a public one while using a private ... what's a purpose then?
+2020-06-03 22:24:49	V7	... of asking for a private one from client's side ...
+2020-06-03 22:24:51	<--	curloxide (~Thunderbi@174-109-188-206.rev.knet.ca) has quit (Ping timeout: 272 seconds)
+2020-06-03 22:24:51	--	comicsansgreenki is now known as curloxide
+2020-06-03 22:24:54	V7	public one*
+2020-06-03 22:24:58	funksh0n	when you generate a key you get two keys, a keypair
+2020-06-03 22:25:06	V7	funksh0n: Please,stop ...
+2020-06-03 22:25:11	rascul	https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Public_key_encryption.svg/1200px-Public_key_encryption.svg.png
+2020-06-03 22:25:15	V7	Oh dear
+2020-06-03 22:25:16	<--	jnt (~jnt@dyndsl-091-096-039-239.ewe-ip-backbone.de) has quit (Ping timeout: 256 seconds)
+2020-06-03 22:25:17	--	jnt_ is now known as jnt
+2020-06-03 22:25:18	-->	Betal (~Betal@unaffiliated/betal) has joined ##linux
+2020-06-03 22:25:27	djph	V7: "client" being, for example, a business partner, and not necessarily "ssh client" ?
+2020-06-03 22:25:42	V7	Nevermind ... i'll just post the message I see, and you might undertand me finanlly ...
+2020-06-03 22:25:43	funksh0n	it is useless to have one key if you call it public or private.  The system only works if you have a pair of keys.  The public key is the one you put on the server(s)
+2020-06-03 22:25:44	hexnewbie	V7: Don't delete the .pub file from the client, headache avoided.
+2020-06-03 22:25:50	funksh0n	you keep the private key
+2020-06-03 22:26:29	-->	Strykar (~wakka@unaffiliated/strykar) has joined ##linux
+2020-06-03 22:27:14	--	Skeer is now known as Skeer_Away
+2020-06-03 22:27:40	djph	V7: having the actual message would certainly clarify things ...
+2020-06-03 22:27:44	V7	> git clone ssh://user@server:port/repo repo --progress
+2020-06-03 22:27:46	V7	Cloning into 'repo'...
+2020-06-03 22:27:48	V7	load pubkey "/path/.ssh/key": invalid formta
+2020-06-03 22:28:02	V7	This one confuses me. Why does the client need a public one?
+2020-06-03 22:28:21	deo	the key is a key when keying with keys :)
+2020-06-03 22:28:42	-->	AlbeiEdward (~Thunderbi@2a02:2f0b:8508:2200:65d4:b9be:85ec:b55d) has joined ##linux
+2020-06-03 22:28:47	<--	isunx (~isunx@n219078171224.netvigator.com) has quit (Quit: isunx)
+2020-06-03 22:29:23	rascul	was the key made with putty?
+2020-06-03 22:29:25	djph	that's either git being bad with words (or the remote end not trusting your key)
+2020-06-03 22:29:32	-->	CubeTheThird (~cubetheth@dhcp-108-168-126-184.cable.user.start.ca) has joined ##linux
+2020-06-03 22:29:34	-->	hydrolab (~Thunderbi@178.22.196.103) has joined ##linux
+2020-06-03 22:29:55	V7	rascul: ssh-keygen
+2020-06-03 22:30:12	<--	random_yanek (~random_ya@host-89-230-172-95.dynamic.mm.pl) has quit (Quit: random_yanek)
+2020-06-03 22:30:20	hexnewbie	Private/public keypairs are generated with complex number theory or elliptic curve formulas, it should be possible to generate the public from the private, but the ones I studied generated *both* from some non-public data instead, and the need to jump through the hoops to generate the public key is... avoided by not deleting it.
+2020-06-03 22:30:30	V7	djph: It does 100%. If I put a public key to a client's path of private key, it works.
+2020-06-03 22:30:42	--	Skeer_Away is now known as Skeer
+2020-06-03 22:30:49	<--	enseneo (~madneap@c-73-4-34-87.hsd1.ct.comcast.net) has quit (Ping timeout: 246 seconds)
+2020-06-03 22:30:51	djph	V7: ... what?
+2020-06-03 22:30:53	prussian	what are you even saying? the public key is for your consumption
+2020-06-03 22:31:08	djph	V7: which end are you calling the "client" right now?
+2020-06-03 22:31:11	hexnewbie	V7: Stop deleting the .pub file, and all will be well
+2020-06-03 22:31:12	prussian	hell, the public part can be immediately deleted as well. private key is all you need.
+2020-06-03 22:31:36	V7	Look. A git server has a public key in authorized_keys for this user. I have a private key in .ssh/ path of this user. When I'm trying to use git it shows me this message.
+2020-06-03 22:31:47	-->	cuppajoeman (~cuppajoem@142.167.250.156) has joined ##linux
+2020-06-03 22:32:01	-->	fightthewalrus (~maomkosdj@KD113148020047.ppp-bb.dion.ne.jp) has joined ##linux
+2020-06-03 22:32:07	V7	prussian: So that's what I'm talking about. Why the heck it asks for a public one
+2020-06-03 22:32:54	-->	random_yanek (~random_ya@host-89-230-172-95.dynamic.mm.pl) has joined ##linux
+2020-06-03 22:32:56	prussian	it's probably a combination of things. based on the little amount I'm getting from you, you're trying to take some privkey you generated on some nextlevel openssh v8.x something and putting it on some server with git 3.17, or equally as old, and some gross ass backported not v5-6 opnessh
+2020-06-03 22:32:59	V7	hexnewbie: Why would a client need a public key?
+2020-06-03 22:33:02	timemage	V7, probably because it's key based authentication, not encryption.  the server wants your public key.
+2020-06-03 22:33:32	V7	timemage: What do you mean?
+2020-06-03 22:33:36	prussian	pubkey is never necessary
+2020-06-03 22:33:38	-->	enseneo (~madneap@c-73-4-34-87.hsd1.ct.comcast.net) has joined ##linux
+2020-06-03 22:34:07	timemage	V7, you're going to have to ask a more specific question.
+2020-06-03 22:34:12	-->	isunx (~isunx@n219078171224.netvigator.com) has joined ##linux
+2020-06-03 22:34:15	prussian	it's for human consumption only, the tooling consuming these keys can do everything they need with the privkey, including generating the public key portion for key exchange
+2020-06-03 22:34:43	<--	AlbeiEdward (~Thunderbi@2a02:2f0b:8508:2200:65d4:b9be:85ec:b55d) has quit (Quit: AlbeiEdward)
+2020-06-03 22:34:59	hexnewbie	In RSA, after you encrypt something with the public part, you decrypt it using both the private and public part. And in the canonical formula, both the public part is not computed from the private part, but rather it's computed first
+2020-06-03 22:35:08	V7	timemage: What do you mean by `server wants you public key`?
+2020-06-03 22:35:14	-->	N1cknAmE (~androirc@41.141.72.97) has joined ##linux
+2020-06-03 22:35:16	V7	Why would it need it?
+2020-06-03 22:35:17	<--	isunx (~isunx@n219078171224.netvigator.com) has quit (Client Quit)
+2020-06-03 22:35:37	timemage	V7, because it would seem you're not using password based authentication.
+2020-06-03 22:35:44	hexnewbie	V7: https://en.wikipedia.org/wiki/RSA_%28cryptosystem%29#Encryption
+2020-06-03 22:35:55	<--	N1cknAmE (~androirc@41.141.72.97) has left ##linux
+2020-06-03 22:35:58	V7	timemage: Sorry, you're saying nonsensen.
+2020-06-03 22:35:58	timemage	V7, there's more than one way to get authenticated with ssh.
+2020-06-03 22:36:06	V7	timemage: Please, stop.
+2020-06-03 22:36:07	prussian	V7: how about explain your actual problem. my guess is you have some nextlevel openssh key format file and need to convert it for old "stable" RH crap
+2020-06-03 22:36:18	timemage	V7, well, this is something i use.  including with ssh and git.  so... no.  i seem to understand it okay.
+2020-06-03 22:36:26	V7	prussian: I'll try to check versions.
+2020-06-03 22:36:42	djph	prussian: better yet, he keeps thiniking of the git repository as "the client" rather than the other way around.
+2020-06-03 22:36:45	prussian	does the top of the privkey have -------BEGIN OPENSSH PRIVATE KEY----- or some shit?
+2020-06-03 22:36:59	prussian	if yes, and you're running git on like....centos7 likes, you need to convert it
+2020-06-03 22:37:17	V7	git ~ 2.27, OpenSSH ~ 7.6p1
+2020-06-03 22:37:39	<--	anjumkaiser (~anjumkais@202.47.51.42) has quit (Quit: Leaving.)
+2020-06-03 22:37:53	prussian	weird openssh version compared to that bleeding edge git
+2020-06-03 22:38:11	V7	Key has `-----BEGIN RSA PRIVATE KEY-----`
+2020-06-03 22:38:19	<--	curloxide (~Thunderbi@174-109-188-206.rev.knet.ca) has quit (Ping timeout: 256 seconds)
+2020-06-03 22:38:22	prussian	ok so what's going on
+2020-06-03 22:38:26	-->	comicsansgreenki (~Thunderbi@174-109-188-206.rev.knet.ca) has joined ##linux
+2020-06-03 22:38:26	prussian	repeat the problem
+2020-06-03 22:38:48	<--	udni (~Thunderbi@2a02:908:697:ede0:3b16:b7da:f29f:f0ec) has quit (Ping timeout: 246 seconds)
+2020-06-03 22:38:53	-->	syntax_ (~syntax_@45.128.133.233) has joined ##linux
+2020-06-03 22:39:26	<--	bigRoo (~user@131.236.54.155) has quit (Remote host closed the connection)
+2020-06-03 22:39:43	-->	royal_screwup21 (522565dc@gateway/web/cgi-irc/kiwiirc.com/ip.82.37.101.220) has joined ##linux
+2020-06-03 22:40:05	prussian	ok. reading back, it sounds like git is trying to use ssh-agent which I believe does try and read the pubkey file.
+2020-06-03 22:40:08	-->	udni (~Thunderbi@2a02:908:697:ede0:3b16:b7da:f29f:f0ec) has joined ##linux
+2020-06-03 22:40:15	prussian	i don't know WHY, but it does.
+2020-06-03 22:40:24	prussian	so what's the problem?
+2020-06-03 22:40:55	-->	isunx (~isunx@n219078171224.netvigator.com) has joined ##linux
+2020-06-03 22:41:07	<--	syntax_ (~syntax_@45.128.133.233) has quit (Client Quit)
+2020-06-03 22:41:08	-->	KindTwo (kindone@freenode/father-christmas/kindone) has joined ##linux
+2020-06-03 22:41:19	<--	cuppajoeman (~cuppajoem@142.167.250.156) has quit (Ping timeout: 272 seconds)
+2020-06-03 22:41:19	V7	The problem is. There new private and public keys. Server has public one, so it's included into `authorized_keys`. The client has a private key in `.ssh/` folder and `known_hosts` has server's fingerprint. All in all, when connecting to this server it says `load pubkey "<absolutepath>/.ssh/key_private": invalid format`
+2020-06-03 22:41:28	-->	curloxide (~Thunderbi@174-109-188-206.rev.knet.ca) has joined ##linux
+2020-06-03 22:41:44	V7	The question is. Why does the client need a private key? Why does it ask for it
+2020-06-03 22:41:49	prussian	ok so that's fine
+2020-06-03 22:42:01	<--	banox (banox@gateway/vpn/nordvpn/banox) has quit (Quit: Leaving)
+2020-06-03 22:42:02	prussian	you need to actually fix you auth problem
+2020-06-03 22:42:13	<--	KindOne (kindone@freenode/father-christmas/kindone) has quit (Ping timeout: 272 seconds)
+2020-06-03 22:42:36	-->	franzer (~franzer@venus.whatbox.ca) has joined ##linux
+2020-06-03 22:42:44	<--	comicsansgreenki (~Thunderbi@174-109-188-206.rev.knet.ca) has quit (Ping timeout: 246 seconds)
+2020-06-03 22:42:45	 *	V7 seems to miss so much `a`s and `the`s )
+2020-06-03 22:42:47	<--	rts64 (~rts64@90.173.153.166) has quit (Ping timeout: 260 seconds)
+2020-06-03 22:43:15	V7	prussian: What might cause it?
+2020-06-03 22:43:24	V7	I mean, why would even client need a public key?
+2020-06-03 22:43:42	hexnewbie	V7: Just assume the key you need is made by both the private and public part, because the private part includes only the private part (i.e. it's really wholly private), therefore you need the other one during the process separately
+2020-06-03 22:43:49	<--	cgp (~Thunderbi@c40-112.i12-11.melita.com) has quit (Quit: cgp)
+2020-06-03 22:43:50	-->	cuppajoeman (~cuppajoem@142.167.250.156) has joined ##linux
+2020-06-03 22:43:52	prussian	idk git just blindly calls ssh which will pick some default identity and that warning is likely more from ssh-agent trying to handle key encryption for you automagically
+2020-06-03 22:44:07	prussian	you can just set the identity by changing the core.sshCommand, or using the ENVIRON GIT_SSH_COMMAND
+2020-06-03 22:44:23	<--	rabliatu (~quassel@199.58.187.132) has quit (Read error: Connection reset by peer)
+2020-06-03 22:44:30	V7	Yes, ssh user@localhost -p port says the same, but connects
+2020-06-03 22:44:32	prussian	or by configuring your ssh client to use the proper identity for the server your git remote is at
+2020-06-03 22:44:50	V7	I mean, it connects well, but outputs this message
+2020-06-03 22:44:51	prussian	ok, what about ssh git@whatever -p port
+2020-06-03 22:45:01	-->	rabliatu (~quassel@199.58.187.132) has joined ##linux
+2020-06-03 22:45:08	prussian	even worse, you're using a non standard port too?
+2020-06-03 22:45:19	prussian	you have so many problems it isn't even funny.
+2020-06-03 22:45:23	--	KindTwo is now known as KindOne
+2020-06-03 22:45:31	V7	prussian: Whare are you talking about?
+2020-06-03 22:45:31	<--	AlanMD_ (~alan@193.105.140.131) has quit (Read error: Connection reset by peer)
+2020-06-03 22:45:38	V7	What problems do I have?
+2020-06-03 22:45:50	faceface	something on my system is trying to email an unknown user, how do I try to debug what process that is?
+2020-06-03 22:45:55	-->	banox (~banox@37.120.203.188) has joined ##linux
+2020-06-03 22:46:03	V7	The only one is that an ssh client outputs this message `load pubkey "<absolutepath>/.ssh/key_private`
+2020-06-03 22:46:08	prussian	protip, git will LITERALLY just call ssh git@whatever and do all its git stuff in that channel
+2020-06-03 22:46:15	V7	There's no other problem
+2020-06-03 22:46:26	prussian	you need to COMMAND git to appropriately call ssh with the appropriate configurations for your git remote
+2020-06-03 22:46:32	faceface	postfix/lmtp[18809] ... User doesn't exist ... (in reply to RCPT TO command)
+2020-06-03 22:46:34	prussian	that isn't a problem dumb dumb
+2020-06-03 22:46:39	faceface	does lmtp leave a log or so?
+2020-06-03 22:46:53	V7	Aight, I'll just stop. Here are so many trolls I think.
+2020-06-03 22:47:00	-->	AlanMD (~alan@193.105.140.131) has joined ##linux
+2020-06-03 22:47:09	prussian	V7: good, I gave you your solution
+2020-06-03 22:47:22	V7	prussian: Haha. You had not.
+2020-06-03 22:47:25	hexnewbie	faceface: I'd just make sure the root alias points to a correct user (and there's no other alias pointing to your non-existing user), then receive the email and read it
+2020-06-03 22:47:32	V7	Although, nevermind, I'll ask somewhere else.
+2020-06-03 22:47:37	timemage	V7, please do.
+2020-06-03 22:47:42	faceface	hexnewbie: I see
+2020-06-03 22:47:58	V7	timemage: Please, read the questions carefully next time.
+2020-06-03 22:47:59	hexnewbie	V7: Your solution is literally to stop doing non-standard things (like deleting files under the false belief they wouldn't be necessary)
+2020-06-03 22:48:11	funksh0n	Anyone know what's going on with my .Xauthority?  Is this normal? https://imgur.com/a/jfnkvjZ
+2020-06-03 22:48:12	V7	hexnewbie: What files?!
+2020-06-03 22:48:12	prussian	both of you are wrong too
+2020-06-03 22:48:14	faceface	hexnewbie: "the root alias", do you mean ... what do you mean?
+2020-06-03 22:48:18	hexnewbie	V7: ~/.id_rsa.pub
+2020-06-03 22:48:18	V7	What are you all talking about wtf
+2020-06-03 22:48:22	prussian	*.pub files are useless
+2020-06-03 22:48:30	hexnewbie	V7: I mean ~/.ssh/id_rsa.pub
+2020-06-03 22:48:35	-->	Maxattax (~max@2600:1700:68c0:3bb0:111:2fd0:6c92:fb8f) has joined ##linux
+2020-06-03 22:48:43	prussian	he's not wrong that those files are garbage, his problem is expecting git to be smart about how it uses the ssh command
+2020-06-03 22:48:46	V7	hexnewbie: You all say the public key is not necessary for the client so wtf?
+2020-06-03 22:49:24	prussian	hexnewbie: that can be generated with `ssh-keygen -f ~/.ssh/id_rsa -y > ~/.ssh/id_rsa.pub` that file *is* useless and can be deleted at your discretion.
+2020-06-03 22:49:25	hexnewbie	V7: The formula I pasted earlier claims to the contrary
+2020-06-03 22:49:35	V7	prussian: I've already told that ssh server says the SAME thing ...
+2020-06-03 22:49:42	V7	Oh dear ... why don't you read the mesages ...
+2020-06-03 22:49:44	faceface	hexnewbie: by "the root alias", do you mean, the catch all email address, or something to do with the root user?
+2020-06-03 22:49:58	-->	simbaclaws (~quassel@ip56585561.direct-adsl.nl) has joined ##linux
+2020-06-03 22:50:02	prussian	V7: why don't you shut the fuck up and read mine? you're using a nonstandard port for your git remote.
+2020-06-03 22:50:11	prussian	otherwise why are you specifying -p
+2020-06-03 22:50:29	V7	prussian: I'VE TOLD YOU. SSH server .... OUTPUTS the SAME.
+2020-06-03 22:50:39	simbaclaws	it's been 5 days and I haven't been able to find a usb stick in any of the stores in nearby towns :(
+2020-06-03 22:50:39	hexnewbie	faceface: The catchall alias here is root, and then root is aliased to e.g. user
+2020-06-03 22:50:43	V7	Not a git one ... oh dear.
+2020-06-03 22:50:46	prussian	then you have an authentication problem on the remote
+2020-06-03 22:50:46	timemage	prussian, i don't think it was an accident that he used the word "troll".  let him ask somewhere else.
+2020-06-03 22:51:11	<--	kunningd (~qwe@unaffiliated/kunningd) has quit (Ping timeout: 260 seconds)
+2020-06-03 22:51:19	funksh0n	he'll be back tomorrow
+2020-06-03 22:51:29	faceface	hexnewbie: I'm sorry, I'm no good at mail. I'm using 'mail in a box' to configure everything
+2020-06-03 22:51:37	<--	daregap (~belovent@cr-01.anx09.lju.si.anexia-it.com) has quit (Quit: daregap)
+2020-06-03 22:51:47	prussian	fails to explain his problem, thinks some useless output is the problem.
+2020-06-03 22:51:49	<--	isunx (~isunx@n219078171224.netvigator.com) has quit (Quit: isunx)
+2020-06-03 22:51:58	prussian	utter moron
+2020-06-03 22:52:06	faceface	hexnewbie: e.g. there is no 'mail' command installed
+2020-06-03 22:52:13	V7	timemage: Am I? I've asked about why does a client need a public key, in the result you said it's because I use pubpriv key auth instead of a pasword one. wtf? Is not that a trolling from your side?
+2020-06-03 22:52:20	<--	Adie (~adie@adie.space) has left ##linux ("Textual IRC Client: www.textualapp.com")
+2020-06-03 22:52:21	<--	smallville7123 (~manjaro-u@cpe-172-193-147-209.qld.foxtel.net.au) has quit (Read error: Connection reset by peer)
+2020-06-03 22:52:21	V7	Ok. I'll just stop here.
+2020-06-03 22:52:22	prussian	you probably need mailx faceface
+2020-06-03 22:52:29	faceface	and I don't want to install mailutils incase it clobbers somethign mail in a box has done
+2020-06-03 22:52:33	V7	I'm sorry you did not understand th question.
+2020-06-03 22:52:34	hexnewbie	faceface: Mine are in /etc/aliases
+2020-06-03 22:52:55	faceface	postmaster:    root
+2020-06-03 22:52:58	faceface	that's all I got.
+2020-06-03 22:53:05	simbaclaws	I know it would be better to provision servers with something like ansible for automating specific usecases instead of using a control panel server. I would want to go with ansible automation in the future, but if I wanted a control panel for easy setup purposes without having to read through a lot of documentation. Would cyberpanel be a good choice?
+2020-06-03 22:53:17	faceface	the mail in a box web gui lets me configure aliases ... using some other protocol I guesS?
+2020-06-03 22:53:22	-->	kunningd (~qwe@unaffiliated/kunningd) has joined ##linux
+2020-06-03 22:53:25	prussian	faceface: do you have an entry for the user?
+2020-06-03 22:53:34	faceface	no, that's literally all I have
+2020-06-03 22:53:40	prussian	it has to be in dovecot's user db or however you have dovecot source users
+2020-06-03 22:53:44	hexnewbie	faceface: You might add an alias for the non-existing user (e.g. nonexisting: root), but you'd have to consult the documentation of your MTA on how to make the new contents of /etc/aliases active
+2020-06-03 22:53:47	faceface	mail in a box lists several 'aliases'
+2020-06-03 22:54:08	faceface	right
+2020-06-03 22:54:19	hexnewbie	newaliases or postalias, likely
+2020-06-03 22:54:23	faceface	I'll try adding the user through teh mail in a box web gui and see what happens
+2020-06-03 22:54:28	-->	thiras (~thiras@unaffiliated/thiras) has joined ##linux
+2020-06-03 22:54:33	faceface	or I'll try on thier slack
+2020-06-03 22:54:36	-->	isunx (~isunx@n219078171224.netvigator.com) has joined ##linux
+2020-06-03 22:55:21	<--	diogenese (~diogenese@diogenese.velotech.net) has quit (Quit: Has anybody seen the bridge?)
+2020-06-03 22:55:49	-->	diogenese (~diogenese@diogenese.velotech.net) has joined ##linux
+2020-06-03 22:56:01	<--	gavlee (~gav@unaffiliated/gavlee) has quit
+2020-06-03 22:57:25	<--	BluesKaj (Blues@gateway/vpn/privateinternetaccess/blueskaj) has quit (Quit: Konversation terminated!)
+2020-06-03 22:57:43	-->	cd (~cd@unaffiliated/cd) has joined ##linux
+2020-06-03 22:57:44	metbsd	is there web filter solution on linux
+2020-06-03 22:57:51	<--	Danie_VDM (~Thunderbi@169-0-254-225.ip.afrihost.co.za) has quit (Quit: Danie_VDM)
+2020-06-03 22:58:02	faceface	filter?
+2020-06-03 22:58:19	faceface	you probably want pi-hole
+2020-06-03 22:58:27	<--	triceratux (~lxqtFocal@047-032-164-178.res.spectrum.com) has quit (Read error: Connection reset by peer)
+2020-06-03 22:58:40	djph	pihole, squid, etc can do it.
+2020-06-03 22:59:08	<--	vimart (~vimart@85.255.236.210) has quit (Ping timeout: 265 seconds)
+2020-06-03 22:59:14	faceface	hi djph
+2020-06-03 22:59:26	djph	pihole is probably the easiest.  Squid is ... probably overkill, but the other features can come in handy for slower connections
+2020-06-03 22:59:59	-->	tarelerulz (44e50205@ip68-229-2-5.lv.lv.cox.net) has joined ##linux
+2020-06-03 23:00:12	<--	Miner_48er (~Miner_48e@216.237.232.10) has quit (Quit: Leaving)
+2020-06-03 23:00:35	metbsd	but i have a problem. if a user choose not to use squid proxy, he/she can go through without proxy
+2020-06-03 23:00:54	tarelerulz	What is a cool thing you seen  Linux do , while you be using it like a big step?
+2020-06-03 23:00:59	metbsd	if i disable http https at gateway, squid won't work too
+2020-06-03 23:01:11	-->	allyriadil9 (~allyriadi@unaffiliated/allyriadil) has joined ##linux
+2020-06-03 23:01:13	metbsd	it's like squid pass the ip address too
+2020-06-03 23:01:56	-->	triceratux (~sisyphus_@047-032-164-178.res.spectrum.com) has joined ##linux
+2020-06-03 23:01:57	-->	Guest20 (~textual@103.215.168.1) has joined ##linux
+2020-06-03 23:02:43	<--	allyriadil (~allyriadi@unaffiliated/allyriadil) has quit (Ping timeout: 260 seconds)
+2020-06-03 23:02:43	--	allyriadil9 is now known as allyriadil
+2020-06-03 23:03:20	<--	royal_screwup21 (522565dc@gateway/web/cgi-irc/kiwiirc.com/ip.82.37.101.220) has quit (Quit: Connection closed)
+2020-06-03 23:03:35	-->	royal_screwup21 (522565dc@gateway/web/cgi-irc/kiwiirc.com/ip.82.37.101.220) has joined ##linux
+2020-06-03 23:03:36	rascul	https://wiki.squid-cache.org/SquidFaq/InterceptionProxy
+2020-06-03 23:03:47	-->	BluesKaj (Blues@gateway/vpn/privateinternetaccess/blueskaj) has joined ##linux
+2020-06-03 23:04:11	--	PaddyF is now known as PaddyF_
+2020-06-03 23:04:27	-->	discovered_ (~discovere@unaffiliated/discovered) has joined ##linux
+2020-06-03 23:05:49	--	irc: disconnected from server

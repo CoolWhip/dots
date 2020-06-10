@@ -1,0 +1,15 @@
+2020-02-29 20:06:50	-->	dpfeiffer (~david@217.138.205.105) has joined #alacritty
+2020-02-29 20:06:50	--	Topic for #alacritty is "Alacritty - A GPU-accelerated terminal emulator <> Latest Release: v0.4.1 - https://github.com/alacritty/alacritty/releases/tag/v0.4.1"
+2020-02-29 20:06:50	--	Topic set by UndeadLeech (~UndeadLee@165.227.76.134) on Mon, 17 Feb 2020 06:20:48
+2020-02-29 20:06:50	--	Channel #alacritty: 109 nicks (3 ops, 0 voices, 106 normals)
+2020-02-29 20:06:52	--	Channel created on Thu, 12 Jan 2017 16:31:37
+2020-02-29 20:07:31	dpfeiffer	Hi all. Is there a list of supported fonts for Alacritty? I just tried Victor MOno but doesn't seem to work. 
+2020-02-29 20:16:06	<--	craigp (~craigp@2001:8003:501b:aa00:e9e8:cb3a:2b54:7172) has quit (Ping timeout: 240 seconds)
+2020-02-29 20:20:54	kchibisov	Could you elaborate on "doesn't seem to work"?
+2020-02-29 20:28:14	dpfeiffer	well, I put "Victor Mono in my alacritty.yml and it does not render Victor font, its defaults to some ugly mess
+2020-02-29 20:28:42	kchibisov	are you sure that your font is named like that?
+2020-02-29 20:29:21	kchibisov	if you're on Linux fc-list | grep -i victor could help
+2020-02-29 20:33:45	dpfeiffer	ahh ok, problem solved. on the github page it says to call "Victor Mono" when there should not be a space. "VictorMono" works.
+2020-02-29 20:33:46	dpfeiffer	cheer
+2020-02-29 20:33:47	dpfeiffer	s
+2020-02-29 20:34:03	--	irc: disconnected from server

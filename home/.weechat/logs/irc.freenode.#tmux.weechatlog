@@ -1,0 +1,17 @@
+2020-03-01 19:13:04	-->	dpfeiffer (~david@n122-110-201-194.sun2.vic.optusnet.com.au) has joined #tmux
+2020-03-01 19:13:04	--	Topic for #tmux is "tmux is a terminal multiplexer | http://tmux.github.io/ | https://groups.google.com/forum/#!forum/tmux-users | Man page: http://man.openbsd.org/OpenBSD-current/man1/tmux.1"
+2020-03-01 19:13:04	--	Topic set by nicm (~nicholas@84.13.197.0) on Fri, 01 Apr 2016 09:37:07
+2020-03-01 19:13:04	--	Channel #tmux: 326 nicks (0 ops, 0 voices, 326 normals)
+2020-03-01 19:13:07	--	Channel created on Fri, 12 Jun 2009 05:16:11
+2020-03-01 19:19:23	dpfeiffer	Is there an easy t follow guide on how to install airline status line on tmux? 
+2020-03-01 19:19:55	dpfeiffer	not installing powerline, want airline for tmux
+2020-03-01 19:23:42	R2robot	I didn't even know that was a thing
+2020-03-01 19:27:37	dpfeiffer	well, there is a vim plugin, tmuxline.vim
+2020-03-01 19:28:03	dpfeiffer	but i've not been able to get tht working as yet
+2020-03-01 19:32:05	-->	thebope (~thebope@pdpc/supporter/student/thebope) has joined #tmux
+2020-03-01 19:34:28	<--	tdy (~tdy@unaffiliated/tdy) has quit (Ping timeout: 258 seconds)
+2020-03-01 19:37:01	<--	thebope (~thebope@pdpc/supporter/student/thebope) has quit (Ping timeout: 255 seconds)
+2020-03-01 19:53:56	-->	mp (sid298319@gateway/web/irccloud.com/x-fiirughormsqwhwp) has joined #tmux
+2020-03-01 20:12:29	-->	akiva (~akiva@d50-92-125-120.bchsia.telus.net) has joined #tmux
+2020-03-01 20:21:42	-->	Fernando-Basso (~FernandoB@131.221.13.232) has joined #tmux
+2020-03-01 20:27:16	<--	dpfeiffer (~david@n122-110-201-194.sun2.vic.optusnet.com.au) has left #tmux ("WeeChat 2.6")

@@ -1,0 +1,223 @@
+2020-01-25 22:40:22		New key binding (context "default"): meta2-1;5P => /bar scroll buflist * -100%
+2020-01-25 22:40:22		New key binding (context "default"): meta2-1;5Q => /bar scroll buflist * +100%
+2020-01-25 22:40:22		New key binding (context "default"): meta-meta-OQ => /bar scroll buflist * e
+2020-01-25 22:40:22		New key binding (context "default"): meta2-1;3Q => /bar scroll buflist * e
+2020-01-25 22:40:22		New key binding (context "default"): meta2-1;3P => /bar scroll buflist * b
+2020-01-25 22:40:22		New key binding (context "default"): meta-meta-OP => /bar scroll buflist * b
+2020-01-25 22:40:22		New key binding (context "default"): meta-OQ => /bar scroll buflist * +100%
+2020-01-25 22:40:22		New key binding (context "default"): meta-OP => /bar scroll buflist * -100%
+2020-01-25 22:40:22		New key binding (context "default"): meta-meta2-12~ => /bar scroll buflist * e
+2020-01-25 22:40:22		New key binding (context "default"): meta-meta2-11~ => /bar scroll buflist * b
+2020-01-25 22:40:22		New key binding (context "default"): meta2-12^ => /bar scroll buflist * +100%
+2020-01-25 22:40:22		New key binding (context "default"): meta2-12~ => /bar scroll buflist * +100%
+2020-01-25 22:40:22		New key binding (context "default"): meta2-11^ => /bar scroll buflist * -100%
+2020-01-25 22:40:22		New key binding (context "default"): meta2-11~ => /bar scroll buflist * -100%
+2020-01-25 22:40:22		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, ruby, script, spell, trigger, xfer
+2020-01-25 22:40:32	=!=	You can not write text in this buffer
+2020-01-25 22:40:35		fifo: pipe closed
+2020-01-26 10:18:00		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, ruby, script, spell, trigger, xfer
+2020-01-26 10:18:13	=!=	irc: unable to add temporary server "irc.freenode.net" because the addition of temporary servers with command /connect is currently disabled
+2020-01-26 10:18:13	=!=	irc: if you want to add a standard server, use the command "/server add" (see /help server); if you really want to add a temporary server (NOT SAVED), turn on the option irc.look.temporary_servers
+2020-01-26 10:18:27	=!=	irc: unable to add temporary server "chat.freenode.net" because the addition of temporary servers with command /connect is currently disabled
+2020-01-26 10:18:27	=!=	irc: if you want to add a standard server, use the command "/server add" (see /help server); if you really want to add a temporary server (NOT SAVED), turn on the option irc.look.temporary_servers
+2020-01-26 10:18:45	=!=	Too few arguments for command "/server add" (help on command: /help server)
+2020-01-26 10:18:51	=!=	Too few arguments for command "/server add" (help on command: /help server)
+2020-01-26 10:19:09	=!=	irc: unable to add temporary server "freenode" because the addition of temporary servers with command /connect is currently disabled
+2020-01-26 10:19:09	=!=	irc: if you want to add a standard server, use the command "/server add" (see /help server); if you really want to add a temporary server (NOT SAVED), turn on the option irc.look.temporary_servers
+2020-01-26 10:23:05		irc: server freenode added
+2020-01-26 10:23:56	=!=	Error: unknown command "/connnect" (type /help for help)
+2020-01-26 10:24:33	=!=	irc: command "msg" must be executed on connected irc server
+2020-01-26 10:27:24	=!=	Error: unknown command "/cllose" (type /help for help)
+2020-01-27 18:13:19		fifo: pipe closed
+2020-01-30 22:08:32		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, ruby, script, spell, trigger, xfer
+2020-01-30 22:35:51		irc: server oftc added
+2020-01-30 22:59:39	=!=	irc: unable to add temporary server "localhost" because the addition of temporary servers with command /connect is currently disabled
+2020-01-30 22:59:39	=!=	irc: if you want to add a standard server, use the command "/server add" (see /help server); if you really want to add a temporary server (NOT SAVED), turn on the option irc.look.temporary_servers
+2020-01-30 23:00:00	=!=	Too few arguments for command "/server add" (help on command: /help server)
+2020-01-30 23:00:09		irc: server localhost added
+2020-01-31 22:14:44		fifo: pipe closed
+2020-01-31 22:14:47		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, ruby, script, spell, trigger, xfer
+2020-01-31 23:13:18		fifo: pipe closed
+2020-02-01 11:57:49		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, ruby, script, spell, trigger, xfer
+2020-02-01 11:57:56		fifo: pipe closed
+2020-02-01 12:46:13		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, ruby, script, spell, trigger, xfer
+2020-02-01 12:46:18	=!=	Error: unknown bar "buffers"
+2020-02-01 12:46:32	=!=	Error: unknown bar "bufflist"
+2020-02-01 12:49:20		fifo: pipe closed
+2020-02-01 12:49:22		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, ruby, script, spell, trigger, xfer
+2020-02-01 12:49:28		Options reloaded from sec.conf
+2020-02-01 12:49:28		Options reloaded from weechat.conf
+2020-02-01 12:49:28		Options reloaded from plugins.conf
+2020-02-01 12:49:28		Options reloaded from charset.conf
+2020-02-01 12:49:28		Options reloaded from logger.conf
+2020-02-01 12:49:28		Options reloaded from exec.conf
+2020-02-01 12:49:28		Options reloaded from trigger.conf
+2020-02-01 12:49:28		Options reloaded from spell.conf
+2020-02-01 12:49:28		Options reloaded from alias.conf
+2020-02-01 12:49:28		Options reloaded from buflist.conf
+2020-02-01 12:49:28		Options reloaded from fifo.conf
+2020-02-01 12:49:28		Options reloaded from xfer.conf
+2020-02-01 12:49:28		Options reloaded from irc.conf
+2020-02-01 12:49:28		Options reloaded from relay.conf
+2020-02-01 12:49:28		Options reloaded from perl.conf
+2020-02-01 12:49:28		Options reloaded from python.conf
+2020-02-01 12:49:28		Options reloaded from ruby.conf
+2020-02-01 12:49:28		Options reloaded from script.conf
+2020-02-01 12:49:28		Options reloaded from fset.conf
+2020-02-01 12:49:49		fifo: pipe closed
+2020-02-01 12:50:31		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, ruby, script, spell, trigger, xfer
+2020-02-01 13:00:16	=!=	Error: unknown command "/cose" (type /help for help)
+2020-02-01 13:01:07	=!=	irc: unable to add temporary server "ufrt" because the addition of temporary servers with command /connect is currently disabled
+2020-02-01 13:01:07	=!=	irc: if you want to add a standard server, use the command "/server add" (see /help server); if you really want to add a temporary server (NOT SAVED), turn on the option irc.look.temporary_servers
+2020-02-01 13:10:54		fifo: pipe closed
+2020-02-01 13:10:58		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, ruby, script, spell, trigger, xfer
+2020-02-01 13:15:04		fifo: pipe closed
+2020-02-01 13:15:14		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, ruby, script, spell, trigger, xfer
+2020-02-01 13:25:41		fifo: pipe closed
+2020-02-01 13:26:08		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, ruby, script, spell, trigger, xfer
+2020-02-01 19:05:32		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, ruby, script, spell, trigger, xfer
+2020-02-01 19:11:51		fifo: pipe closed
+2020-02-01 19:20:24		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, ruby, script, spell, trigger, xfer
+2020-02-01 19:20:42		fifo: pipe closed
+2020-02-01 19:23:59		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, ruby, script, spell, trigger, xfer
+2020-02-01 19:24:03		fifo: pipe closed
+2020-02-01 21:26:49		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, ruby, script, spell, trigger, xfer
+2020-02-01 21:26:53		fifo: pipe closed
+2020-02-17 21:59:22		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, ruby, script, spell, trigger, xfer
+2020-02-17 22:10:19		fifo: pipe closed
+2020-02-27 15:58:20		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, ruby, script, spell, trigger, xfer
+2020-02-27 16:02:39		fifo: pipe closed
+2020-02-27 16:02:41		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, ruby, script, spell, trigger, xfer
+2020-02-27 16:05:01	=!=	Error: unknown command "/account" (type /help for help)
+2020-02-27 16:05:13	=!=	Error: unknown command "/account" (type /help for help)
+2020-02-27 16:29:06		fifo: pipe closed
+2020-02-29 20:05:47		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, ruby, script, spell, trigger, xfer
+2020-02-29 20:13:36		[core]
+2020-02-29 20:13:36		  away     buffer   command  debug    filter   history  key      mouse    plugin   proxy    reload   save     set      upgrade  version  window 
+2020-02-29 20:13:36		  bar      color    cursor   eval     help     input    layout   mute     print    quit     repeat   secure   unset    uptime   wait   
+2020-02-29 20:13:36		[relay]
+2020-02-29 20:13:36		  relay
+2020-02-29 20:13:36		[exec]
+2020-02-29 20:13:36		  exec
+2020-02-29 20:13:36		[perl]
+2020-02-29 20:13:36		  perl
+2020-02-29 20:13:36		[trigger]
+2020-02-29 20:13:36		  trigger
+2020-02-29 20:13:36		[logger]
+2020-02-29 20:13:36		  logger
+2020-02-29 20:13:36		[irc]
+2020-02-29 20:13:36		  admin       connect     devoice     invite      links       motd        op          quiet       sajoin      service     time        users       whois     
+2020-02-29 20:13:36		  allchan     ctcp        die         ison        list        msg         oper        quote       samode      servlist    topic       version     whowas    
+2020-02-29 20:13:36		  allpv       cycle       disconnect  join        lusers      names       part        reconnect   sanick      squery      trace       voice     
+2020-02-29 20:13:36		  allserv     dcc         halfop      kick        map         nick        ping        rehash      sapart      squit       unban       wallchops 
+2020-02-29 20:13:36		  ban         dehalfop    ignore      kickban     me          notice      pong        remove      saquit      stats       unquiet     wallops   
+2020-02-29 20:13:36		  cap         deop        info        kill        mode        notify      query       restart     server      summon      userhost    who       
+2020-02-29 20:13:36		[charset]
+2020-02-29 20:13:36		  charset
+2020-02-29 20:13:36		[python]
+2020-02-29 20:13:36		  python
+2020-02-29 20:13:36		[spell]
+2020-02-29 20:13:36		  spell
+2020-02-29 20:13:36		[script]
+2020-02-29 20:13:36		  script
+2020-02-29 20:13:36		[fset]
+2020-02-29 20:13:36		  fset
+2020-02-29 20:13:36		[xfer]
+2020-02-29 20:13:36		  me  xfer
+2020-02-29 20:13:36		[ruby]
+2020-02-29 20:13:36		  ruby
+2020-02-29 20:13:36		[fifo]
+2020-02-29 20:13:36		  fifo
+2020-02-29 20:13:36		[buflist]
+2020-02-29 20:13:36		  buflist
+2020-02-29 20:13:36		[alias]
+2020-02-29 20:13:36		  AAWAY    ANICK    BYE      CHAT     CLOSE    IG       K        LEAVE    MSGBUF   N        REDRAW   SIGNOFF  UB       V        WC       WII      WW     
+2020-02-29 20:13:36		  alias    BEEP     C        CL       EXIT     J        KB       M        MUB      Q        SAY      T        UMODE    W        WI       WM     
+2020-02-29 20:13:59	=!=	Error: unknown command "/nickserv" (type /help for help)
+2020-02-29 20:14:09	=!=	No help available, "nickserv" is not a command or an option
+2020-02-29 20:14:18		[irc]  /msg  [-server <server>] <target>[,<target>...] <text>
+2020-02-29 20:14:18		send message to a nick or channel
+2020-02-29 20:14:18		server: send to this server (internal name)
+2020-02-29 20:14:18		target: nick or channel (may be mask, '*' = current channel)
+2020-02-29 20:14:18		  text: text to send
+2020-02-29 20:14:43	=!=	No help available, "register" is not a command or an option
+2020-02-29 20:14:50		[core]
+2020-02-29 20:14:50		  away     buffer   command  debug    filter   history  key      mouse    plugin   proxy    reload   save     set      upgrade  version  window 
+2020-02-29 20:14:50		  bar      color    cursor   eval     help     input    layout   mute     print    quit     repeat   secure   unset    uptime   wait   
+2020-02-29 20:14:50		[relay]
+2020-02-29 20:14:50		  relay
+2020-02-29 20:14:50		[exec]
+2020-02-29 20:14:50		  exec
+2020-02-29 20:14:50		[perl]
+2020-02-29 20:14:50		  perl
+2020-02-29 20:14:50		[trigger]
+2020-02-29 20:14:50		  trigger
+2020-02-29 20:14:50		[logger]
+2020-02-29 20:14:50		  logger
+2020-02-29 20:14:50		[irc]
+2020-02-29 20:14:50		  admin       connect     devoice     invite      links       motd        op          quiet       sajoin      service     time        users       whois     
+2020-02-29 20:14:50		  allchan     ctcp        die         ison        list        msg         oper        quote       samode      servlist    topic       version     whowas    
+2020-02-29 20:14:50		  allpv       cycle       disconnect  join        lusers      names       part        reconnect   sanick      squery      trace       voice     
+2020-02-29 20:14:50		  allserv     dcc         halfop      kick        map         nick        ping        rehash      sapart      squit       unban       wallchops 
+2020-02-29 20:14:50		  ban         dehalfop    ignore      kickban     me          notice      pong        remove      saquit      stats       unquiet     wallops   
+2020-02-29 20:14:50		  cap         deop        info        kill        mode        notify      query       restart     server      summon      userhost    who       
+2020-02-29 20:14:50		[charset]
+2020-02-29 20:14:50		  charset
+2020-02-29 20:14:50		[python]
+2020-02-29 20:14:50		  python
+2020-02-29 20:14:50		[spell]
+2020-02-29 20:14:50		  spell
+2020-02-29 20:14:50		[script]
+2020-02-29 20:14:50		  script
+2020-02-29 20:14:50		[fset]
+2020-02-29 20:14:50		  fset
+2020-02-29 20:14:50		[xfer]
+2020-02-29 20:14:50		  me  xfer
+2020-02-29 20:14:50		[ruby]
+2020-02-29 20:14:50		  ruby
+2020-02-29 20:14:50		[fifo]
+2020-02-29 20:14:50		  fifo
+2020-02-29 20:14:50		[buflist]
+2020-02-29 20:14:50		  buflist
+2020-02-29 20:14:50		[alias]
+2020-02-29 20:14:50		  AAWAY    ANICK    BYE      CHAT     CLOSE    IG       K        LEAVE    MSGBUF   N        REDRAW   SIGNOFF  UB       V        WC       WII      WW     
+2020-02-29 20:14:50		  alias    BEEP     C        CL       EXIT     J        KB       M        MUB      Q        SAY      T        UMODE    W        WI       WM     
+2020-02-29 20:34:03		fifo: pipe closed
+2020-03-01 19:10:28		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, ruby, script, spell, trigger, xfer
+2020-03-01 19:11:19		fifo: pipe closed
+2020-03-01 19:11:31		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, ruby, script, spell, trigger, xfer
+2020-03-01 20:47:49		fifo: pipe closed
+2020-03-03 19:31:03		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, ruby, script, spell, trigger, xfer
+2020-03-03 19:35:25	=!=	Error: unknown command "/disconect" (type /help for help)
+2020-03-03 19:35:53	=!=	Error: unknown command "/account" (type /help for help)
+2020-03-03 19:36:22	=!=	Error: unknown command "/account" (type /help for help)
+2020-03-03 19:37:05	=!=	Too few arguments for command "/OPER" (help on command: /help OPER)
+2020-03-03 23:00:04		fifo: pipe closed
+2020-03-12 21:30:13		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, ruby, script, spell, trigger, xfer
+2020-03-12 22:34:52		fifo: pipe closed
+2020-03-26 21:05:06		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, ruby, script, spell, trigger, xfer
+2020-03-26 21:10:17		fifo: pipe closed
+2020-03-27 18:28:36		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, ruby, script, spell, trigger, xfer
+2020-03-27 20:54:35		fifo: pipe closed
+2020-03-27 20:54:49		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, ruby, script, spell, trigger, xfer
+2020-03-27 21:04:50		fifo: pipe closed
+2020-03-27 21:05:05		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, ruby, script, spell, trigger, xfer
+2020-03-27 21:21:23		fifo: pipe closed
+2020-04-07 22:12:02		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, ruby, script, spell, trigger, xfer
+2020-04-07 22:15:48		fifo: pipe closed
+2020-04-16 21:46:17		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, ruby, script, spell, trigger, xfer
+2020-04-16 21:54:40		fifo: pipe closed
+2020-04-16 21:54:42		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, ruby, script, spell, trigger, xfer
+2020-04-16 21:54:49	=!=	You can not write text in this buffer
+2020-04-16 21:54:54		fifo: pipe closed
+2020-04-16 21:57:39		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, ruby, script, spell, trigger, xfer
+2020-04-16 21:57:50		fifo: pipe closed
+2020-04-16 21:59:03		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, ruby, script, spell, trigger, xfer
+2020-04-16 21:59:07		fifo: pipe closed
+2020-04-16 21:59:34		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, ruby, script, spell, trigger, xfer
+2020-04-16 21:59:36		fifo: pipe closed
+2020-04-16 22:00:15		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, ruby, script, spell, trigger, xfer
+2020-04-16 22:00:17		fifo: pipe closed
+2020-06-03 19:44:40	=!=	Warning: /home/david/.weechat/irc.conf, line 91: unknown option for section "network": channel_encode = off
+2020-06-03 19:44:40		Plugins loaded: alias, buflist, charset, exec, fifo, fset, irc, logger, perl, python, relay, ruby, script, spell, trigger, xfer
+2020-06-03 23:05:49		fifo: pipe closed

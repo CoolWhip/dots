@@ -1,0 +1,72 @@
+2020-01-30 22:36:30	-->	david (~david@n122-110-152-227.sun2.vic.optusnet.com.au) has joined #bitlbee
+2020-01-30 22:36:30	--	Topic for #bitlbee is "Welcome to the BitlBeeHive | Latest version: 3.5.1 (actually 3.6 but dx didn't write the announcement post yet) | Twitter: "account twitter set stream off" https://wiki.bitlbee.org/HowtoTwitter/StreamDeprecation | http://wiki.bitlbee.org/FAQ | APT: http://code.bitlbee.org/debian/"
+2020-01-30 22:36:30	--	Topic set by dx (~dx@00018ce8.user.oftc.net) on Sat, 04 May 2019 21:34:06
+2020-01-30 22:36:32	--	Channel #bitlbee: 220 nicks (0 ops, 0 voices, 220 normals)
+2020-01-30 22:36:32	--	Channel created on Tue, 16 Sep 2008 12:59:52
+2020-01-30 22:36:52	david	hi all
+2020-01-30 22:37:03	david	need some help getting bitlbee configured
+2020-01-30 22:37:18	kensanata	for what service?
+2020-01-30 22:37:38	david	want to use it for facebook messenger
+2020-01-30 22:38:00	david	I'm on pop_os and i believe it uses xinetd instead of inetd
+2020-01-30 22:38:40	david	I'm following the user guide and I cant seem to find a file called bitlbee.xinetd
+2020-01-30 22:38:50	kensanata	Sadly, that's not my area of expertise...
+2020-01-30 22:39:21	david	no worries
+2020-01-30 22:39:45	kensanata	I guess I'd start with debian/bitlbee-common.init?
+2020-01-30 22:42:04	kensanata	A quick skimming of some forums tells me "xinit, the successor of init, which opens services as they are needed and then closing them, instead of running them in the background all the time"
+2020-01-30 22:42:30	kensanata	so I guess you need the invocation that starts bitlbee in the foreground and closes it when you're done?
+2020-01-30 22:43:02	<--	knidos (~knidos@85.98.155.173) has quit (Quit: WeeChat 1.9.1)
+2020-01-30 22:44:35	kensanata	Personally, on Windows, I start bitlbee -n -F -v -d ~/.bitlbee -c  ~/.bitlbee /bitlbee.conf for example...
+2020-01-30 22:45:24	sid3windr	xinit is not xinetd, kensanata
+2020-01-30 22:45:42	sid3windr	david: what user guide are you following? do you have the url for me?
+2020-01-30 22:46:33	david	sid3windr: https://www.bitlbee.org/user-guide.html#id-1.2.4
+2020-01-30 22:47:33	david	under "configuration" it asks to put 'bitlbee.xinetd' in /etc/xinet.d
+2020-01-30 22:48:03	david	I cannot find bitlbee.xinetd
+2020-01-30 22:49:26	dx	oof this isn't good advice
+2020-01-30 22:49:34	<--	texou (~jp@000178ec.user.oftc.net) has quit (Ping timeout: 480 seconds)
+2020-01-30 22:50:30	david	dx: hopfully the simple answer is I'm looking in the wrong place or I'm reading an outdated user guide...
+2020-01-30 22:50:42	dx	yeah
+2020-01-30 22:51:13	dx	hm. did you also compile bitlbee?
+2020-01-30 22:52:46	sid3windr	should be running as daemon instead amirite
+2020-01-30 22:53:30	dx	yeah
+2020-01-30 22:53:49	dx	the whole thing should be like, apt install, systemctl enable, systemctl start
+2020-01-30 22:54:16	dx	but i don't think there's a specific doc where that is spelt out
+2020-01-30 22:54:18	sid3windr	pop is modded ubuntu I guess, so should just work(tm)
+2020-01-30 22:54:44	sid3windr	doesn't apt install already enable&start btw
+2020-01-30 22:54:46	dx	right
+2020-01-30 22:54:55	david	dx: yeah, i followed that guide for configure, make, make install
+2020-01-30 22:54:58	sid3windr	so basically it's add 2 apt sources and install ;)
+2020-01-30 22:55:11	david	hmmm ok 
+2020-01-30 22:55:16	dx	the one in the ubuntu repos is prolly good enough
+2020-01-30 22:55:33	dx	david: go back to the source dir and do 'make uninstall'
+2020-01-30 22:56:41	dx	after that 'apt install bitlbee'
+2020-01-30 22:56:52	dx	and that should be enough
+2020-01-30 22:57:18	david	i run that and get:
+2020-01-30 22:57:36	david	bitlbee is already the newest version (3.6-1.1).
+2020-01-30 22:57:36	david	bitlbee-plugin-facebook is already the newest version (1.2.0-1).
+2020-01-30 22:57:36	david	yy
+2020-01-30 22:57:36	david	y
+2020-01-30 22:57:43	sid3windr	hah
+2020-01-30 22:57:49	dx	neat
+2020-01-30 22:57:49	sid3windr	fixed.
+2020-01-30 22:57:49	sid3windr	:P
+2020-01-30 22:58:02	sid3windr	dx: look, a version from the future!
+2020-01-30 22:58:12	dx	sid3windr: heheh
+2020-01-30 22:58:24	dx	david: so now connect with your irc client to localhost
+2020-01-30 23:00:22	david	its alive
+2020-01-30 23:00:25	david	thanks dudes
+2020-01-30 23:00:53	david	been about 10 years since I've used bitlbee/irc
+2020-01-30 23:00:56	david	bit rusty
+2020-01-30 23:01:25	dx	we should nuke the bad advice out of that guide
+2020-01-30 23:01:26	david	but now how do I connect to facebook?
+2020-01-30 23:01:57	dx	give the quickstart a read
+2020-01-30 23:02:05	dx	and then https://wiki.bitlbee.org/HowtoFacebookMQTT
+2020-01-30 23:02:12	david	cool will do
+2020-01-30 23:04:44	david	cheers again for the help
+2020-01-30 23:04:56	<--	david (~david@n122-110-152-227.sun2.vic.optusnet.com.au) has left #bitlbee (WeeChat 2.6)
+2020-01-30 23:10:44	--	irc: disconnected from server
+2020-01-31 10:33:47	--	irc: disconnected from server
+2020-01-31 10:47:09	--	irc: disconnected from server
+2020-01-31 12:23:43	--	irc: disconnected from server
+2020-01-31 12:50:39	--	irc: disconnected from server
+2020-01-31 21:52:59	--	irc: disconnected from server
+2020-01-31 22:14:44	--	irc: disconnected from server
