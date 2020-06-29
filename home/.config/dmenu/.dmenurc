@@ -1,0 +1,26 @@
+#!/bin/bash
+
+## Define the font for dmenu to be used
+# DMENU_FN="Sans-10"
+DMENU_FN="Operator Mono Book-15"
+
+# Background colour for unselected menu-items
+DMENU_NB="#2E3436"
+
+# Textcolour for unselected menu-items
+DMENU_NF="#B5B5B5"
+
+# Background colour for selected menu-items
+DMENU_SB="#636869"
+
+# Textcolour for selected menu-items
+DMENU_SF="#DEDEDE"
+
+# PANEL_HEIGHT="25"
+
+# Command for the terminal application to be used:
+TERMINAL_CMD="x-terminal-emulator -e"
+
+# Export our variables
+DMENU_OPTIONS="-fn $DMENU_FN -nb $DMENU_NB -nf $DMENU_NF -sf $DMENU_SF -sb $DMENU_SB"
+export DMENU_FN DMENU_NB DMENU_NF DMENU_SF DMENU_SB DMENU_OPTIONS TERMINAL
