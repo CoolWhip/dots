@@ -113,10 +113,10 @@ nnoremap <C-l>l :set background=light<CR>
 nnoremap <C-s> :source ~/.config/nvim/init.vim<CR>
 nnoremap <silent> <C-f> :NERDTreeFocus<CR>
 
-nnoremap <Up> :resize +2<CR>
-nnoremap <Down> :resize -2<CR>
-nnoremap <Left> :vertical resize +2<CR>
-nnoremap <Right> :vertical resize -2<CR>
+"nnoremap <Up> :resize +2<CR>
+"nnoremap <Down> :resize -2<CR>
+"nnoremap <Left> :vertical resize +2<CR>
+"nnoremap <Right> :vertical resize -2<CR>
 
 xnoremap K :move '<-2<CR>gv-gv
 xnoremap J :move '>+1<CR>gv-gv

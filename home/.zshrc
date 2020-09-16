@@ -4,6 +4,9 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="/home/david/.oh-my-zsh"
 
+# Path to Android platform tools
+export PATH="/usr/local/bin/platform-tools:$PATH"
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -89,6 +92,18 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+# FFF colours
+export FFF_COL2=9
+export FFF_COL5=6
+export FFF_W3M_XOFFSET=0
+export FFF_W3M_YOFFSET=0
+
+# Run 'fff' with 'f' or whatever you decide to name the function.
+f() {
+    fff "$@"
+    cd "$(cat "${XDG_CACHE_HOME:=${HOME}/.cache}/fff/.fff_d")"
+}
+
 # Command Not Found insulter
 if [ -f /etc/bash.command-not-found ]; then
     . /etc/bash.command-not-found
@@ -100,12 +115,13 @@ fi
 # For a full list of active aliases, run `alias`.
 
 # Aliases
-alias zshconfig="sudo nano ~/.zshrc"
+alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="sudo nano ~/.oh-my-zsh"
 alias bashconfig="sudo nano ~/.bashrc"
 alias alacritty.yml="nvim ~/.config/alacritty/alacritty.yml"
 alias nanorc="nano ~/.nanorc"
-alias vimrc="nvim /etc/xdg/nvim/init.vim"
+alias vimrc="nvim ~/.config/nvim/init.vim"
+alias suvimrc="sudo nvim /etc/xdg/nvim/init.vim"
 alias userChrome="nvim ~/.mozilla/firefox/al4zpld7.default-release/chrome/userChrome.css"
 alias update="sudo apt update"
 alias upgrade="sudo apt upgrade"
@@ -121,7 +137,7 @@ alias autoremove="sudo apt autoremove"
 alias spotify="ncmpcpp"
 alias reload="source ~/.zshrc && clear && figlet -f smslant zsh reloaded | lolcat"
 alias ufetch="/usr/bin/./ufetch-popos"
-alias ufetchconfig="nano /usr/bin/ufetch-popos"
+alias ufetchconf="nvim /usr/bin/ufetch-popos"
 alias yacy="~/Downloads/yacy/./startYACY.sh"
 alias email="neomutt"
 alias chat="weechat"
@@ -137,5 +153,6 @@ alias reboot="sudo reboot"
 alias goodbye="sudo shutdown -h now"
 alias xterm="xterm -ti vt340"
 alias w3mimg="w3m -o auto_image=TRUE"
+alias pm='passmenu $dmenu_bottom -fn "Operator Mono Book-15" -nb "black" -sb "#94EBEB" -sf "black"'
 
 ufetch
