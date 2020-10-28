@@ -14,7 +14,7 @@ shell="$(basename "${SHELL} ${ZSH_VERSION}")"                   # still doesn't 
 #shell="$($SHELL --version | awk 'FNR == 1 {print $1$2}')"      # shows shell version but without space
 bat_percent="$(cat /sys/class/power_supply/BAT0/capacity)"
 bat_state="$(cat /sys/class/power_supply/BAT0/status)"
-colors="$(~/Scripts/./colors.sh)"
+colors="$(~/.scripts/./colors.sh)"
 
 ## UI DETECTION
 #
@@ -71,7 +71,7 @@ cm="${reset}${bold}${cyan}"	    # asci
 
 cat <<EOF
 ${cm}  ______
-${cm}  \\   _ \\        __        ${lc}OS ${ic}${os}${reset}
+${cm}  \\   _ \\        __      ${lc}HOST ${ic}${os}${reset}
 ${cm}   \\ \\ \\ \\      / /    ${lc}KERNEL ${ic}${kernel}${reset}
 ${cm}    \\ \\_\\ \\    / /     ${lc}UPTIME ${ic}${uptime}${reset}
 ${cm}     \\  ___\\  /_/    ${lc}PACKAGES ${ic}${packages}${reset}
