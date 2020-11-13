@@ -27,45 +27,41 @@
 " PLUGINS
 "=========================================================================================
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'AutoClose'
-Plugin 'vifm/vifm.vim'
-Plugin 'junegunn/limelight.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'jeetsukumaran/vim-buffergator'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'rust-lang/rust.vim'
-Plugin 'tpope/vim-markdown'
-Plugin 'ap/vim-css-color'
-Plugin 'yggdroot/indentline'
-Plugin 'junegunn/goyo.vim'
-Plugin 'ryanoasis/vim-devicons'
+call plug#begin()
+Plug 'dylanaraps/fff.vim'
+Plug 'VundleVim/Vundle.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plug 'vifm/vifm.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'jeetsukumaran/vim-buffergator'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'rust-lang/rust.vim'
+Plug 'tpope/vim-markdown'
+Plug 'ap/vim-css-color'
+Plug 'yggdroot/indentline'
+Plug 'junegunn/goyo.vim'
+Plug 'ryanoasis/vim-devicons'
 " Color-schemes
-Plugin 'flazz/vim-colorschemes'
-Plugin 'morhetz/gruvbox'
-Plugin 'kristijanhusak/vim-hybrid-material'
-Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'ajh17/Spacegray.vim'
-Plugin 'chriskempson/base16-vim'
+Plug 'flazz/vim-colorschemes'
+Plug 'morhetz/gruvbox'
+Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'ajh17/Spacegray.vim'
+Plug 'chriskempson/base16-vim'
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
+call plug#end()            " required
+
 " Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+" :PlugList       - lists configured plugins
+" :PlugInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PlugSearch foo - searches for foo; append `!` to refresh local cache
+" :PlugClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
@@ -113,6 +109,9 @@ nnoremap <C-l>l :set background=light<CR>
 nnoremap <C-s> :source ~/.config/nvim/init.vim<CR>
 nnoremap <silent> <C-f> :NERDTreeFocus<CR>
 
+" Open fff on press of 'f'
+nnoremap f :F<CR>
+
 "nnoremap <Up> :resize +2<CR>
 "nnoremap <Down> :resize -2<CR>
 "nnoremap <Left> :vertical resize +2<CR>
@@ -150,7 +149,8 @@ let g:UltiSnipsExpandTrigger="<c-t>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/bundle/vim-snippets/UltiSnips']
-
+let g:fff#split_direction = "nosplitbelow nosplitright"
+let g:fff#split = "30vnew"
 
 "Goyo settings
 function! s:goyo_enter()
