@@ -28,6 +28,7 @@
 "=========================================================================================
 
 call plug#begin()
+Plug 'mhinz/vim-startify'
 Plug 'dylanaraps/fff.vim'
 Plug 'VundleVim/Vundle.vim'
 Plug 'tpope/vim-fugitive'
@@ -171,3 +172,23 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 " Remove trailing white spaces
 autocmd BufWritePre * %s/\s\+$//e
 
+"config startify plugin
+"
+let g:startify_custom_header = [
+\ '       88          88                                         ',
+\ '         88      88                                           ',
+\ '       88888888888888                                         ',
+\ '     8888  888888  8888       88  88 888888 888888 88  88  88 ',
+\ '   8888888888888888888888     88  88 88  88 88     88 88   88 ',
+\ '   88  88888888888888  88     888888 888888 88     88888      ',
+\ '   88  88          88  88     88  88 88  88 888888 88  88  88 ',
+\ '         8888  8888                                           ',
+\ ]
+
+let g:startify_lists = [
+\ { 'type': 'files',	'header': ['    last modified:'] },
+\ { 'type': 'bookmarks', 'header': ['    bookmarks:'] },
+\ { 'type': 'dir',	'header': ['    files in folder '. getcwd()]},
+\ ]
+
+let g:startify_bookmarks = [ {'v': '~/.vim/vimrc'}, {'x': '~/.xmonad/xmonad.hs'}, {'b': '~/.config/xmobar/xmobarrc0'}, {'t': '~/CODE/tlr/'}]
