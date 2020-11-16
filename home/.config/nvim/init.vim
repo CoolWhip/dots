@@ -28,6 +28,7 @@
 "=========================================================================================
 
 call plug#begin()
+Plug 'adelarsq/vim-autoclose'
 Plug 'mhinz/vim-startify'
 Plug 'dylanaraps/fff.vim'
 Plug 'VundleVim/Vundle.vim'
@@ -191,4 +192,4 @@ let g:startify_lists = [
 \ { 'type': 'dir',	'header': ['    files in folder '. getcwd()]},
 \ ]
 
-let g:startify_bookmarks = [ {'v': '~/.vim/vimrc'}, {'x': '~/.xmonad/xmonad.hs'}, {'b': '~/.config/xmobar/xmobarrc0'}, {'t': '~/CODE/tlr/'}]
+let g:startify_bookmarks = [ {'v': '~/.config/nvim/init.vim'}, {'a': '~/.config/alacritty/alacritty.yml'}, {'z': '~/.zshrc'}, {'t': '~/.tmux.conf'}]
