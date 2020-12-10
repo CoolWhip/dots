@@ -1,8 +1,8 @@
 #!/bin/sh
 
 Volume() {
-    VolInf="$(mixerctl outputs.master | sed -e 's|.*,||g')"
-    echo "Vol $name $(expr \( $VolInf \* 100 \) / 254)%"
+    VolInf="$(amixer get Master | awk -F'[][]' 'END{ print $2 }' | sed 's/on://g')"
+    echo "Vol $VolInf"
 }
 
 #BcklInf() {
@@ -21,7 +21,8 @@ Battery() {
 }
 
 Weather() {
-    echo "$(curl -s wttr.in/-37.731665,144.995026?format='%C+%t\n')"
+    echo "$(cat /home/$USER/.config/spectrwm/weather.txt)"
+#    echo "$(curl -s wttr.in/-37.731665,144.995026?format='%C+%t\n')"
 }
 
 Pkgs() {
