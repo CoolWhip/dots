@@ -1,2 +1,2 @@
 # Pop_OS
-These are my personal dotfiles for my Pop!_OS system
+This is just a personal repository of my Pop!_OS dotfiles. Nothing really belongs so me so take what you want, just dont ask me any questions :P
