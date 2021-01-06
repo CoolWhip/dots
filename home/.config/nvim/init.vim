@@ -28,6 +28,8 @@
 "=========================================================================================
 
 call plug#begin()
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'adelarsq/vim-autoclose'
 Plug 'mhinz/vim-startify'
 Plug 'dylanaraps/fff.vim'
@@ -73,6 +75,8 @@ call plug#end()            " required
 "=========================================================================================
 
 syntax on
+set number
+set relativenumber
 set tabstop=4
 set shiftwidth=4
 set expandtab
