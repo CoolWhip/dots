@@ -85,6 +85,9 @@ f() {
 # FFF opener
 export FFF_OPENER="/home/dave/.fff_open.sh"
 
+# set FZF layout
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+
 # Command Not Found insulter
 if [ -f /etc/bash.command-not-found ]; then
     . /etc/bash.command-not-found
