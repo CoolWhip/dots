@@ -85,8 +85,9 @@ f() {
 # FFF opener
 export FFF_OPENER="/home/dave/.fff_open.sh"
 
-# set FZF layout
-export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+# use FZF & FD
+export FZF_DEFAULT_COMMAND='fdfind --type file --follow --hidden --color=always'
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --ansi'
 
 # Command Not Found insulter
 if [ -f /etc/bash.command-not-found ]; then
@@ -132,9 +133,8 @@ alias newsboat="newsboat -r"
 alias weather="curl wttr.in/Melbourne"
 alias weather2="curl v2.wttr.in/Melbourne"
 alias moon="curl wttr.in/Moon"
-alias pi-hole="ssh 192.168.1.242 -l pi"
-alias h="history | cut -c 20- | sort | uniq | fzf | tr -d '\n' | xclip -selection c"
-alias reddsave="env -i reddsaver -e ~/Downloads/Programs/reddsaver/reddsaver.env -d ~/Pictures/reddit/"
+alias reddsave="env -i reddsaver -e ~/Downlads/Programs/reddsaver/reddsaver.env -d ~/Pictures/reddit/"
+alias fd="fdfind -HI"
 alias v="nvim"
 alias edit="nvim"
 alias delete="sudo rm -rf"
@@ -147,6 +147,7 @@ alias w3mimg="w3m -o auto_image=TRUE"
 alias fap=$'(grim -g "$(slurp)")'
 alias walls="sxiv -t -p -b -r -g 1200x675 ~/Pictures/walls &"
 alias dumps="sxiv -t -p -b -r -g 1200x675 ~/Pictures/dumps &"
+alias emptytrash="rm -rf ~/.local/share/fff/trash/*"
 # kb-manager
 alias kbl="kb list"
 alias kbe="kb edit"
