@@ -196,4 +196,4 @@ let g:startify_lists = [
 \ { 'type': 'dir',	'header': ['    files in folder '. getcwd()]},
 \ ]
 
-let g:startify_bookmarks = [ {'v': '~/.config/nvim/init.vim'}, {'a': '~/.config/alacritty/alacritty.yml'}, {'z': '~/.zshrc'}, {'t': '~/.tmux.conf'}]
+let g:startify_bookmarks = [ {'v': '~/.config/nvim/init.vim'}, {'a': '~/.config/alacritty/alacritty.yml'}, {'z': '~/.zshrc'}, {'o': '~/.oh-my-zsh'}, {'t': '~/.tmux.conf'}]
