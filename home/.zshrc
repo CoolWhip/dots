@@ -70,22 +70,43 @@ export ARCHFLAGS="-arch x86_64"
 # zoxide
 eval "$(zoxide init zsh)"
 
-# FFF colours
+# fff
+# Show/Hide hidden files on open (Off by default)
+export FFF_HIDDEN=1
+
+# dir color
+export FFF_COL1=2
+# status bg color
 export FFF_COL2=9
-export FFF_COL5=6
+# selection color
+export FFF_COL3=1
+# cursor color
+export FFF_COL4=3
+# status fg color
+export FFF_COL5=7
+
+# w3m-img offsets
 export FFF_W3M_XOFFSET=0
 export FFF_W3M_YOFFSET=0
 
-# Run 'FFF' with 'f' or whatever you decide to name the function.
+# Trash Directory
+export FFF_TRASH=~/.local/share/fff/trash
+
+# Run 'fff' with 'f' or whatever you decide to name the function.
 f() {
     fff "$@"
     cd "$(cat "${XDG_CACHE_HOME:=${HOME}/.cache}/fff/.fff_d")"
 }
 
-# FFF opener
+# fff opener
 export FFF_OPENER="/home/dave/.fff_open.sh"
 
-# use FZF & FD
+# fff file format.
+export FFF_FILE_FORMAT="%f"
+# fff mark format.
+export FFF_MARK_FORMAT="  %f*"
+
+# use fd with fzf
 export FZF_DEFAULT_COMMAND='fdfind --type file --follow --hidden --color=always'
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --ansi'
 
@@ -93,11 +114,6 @@ export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --ansi'
 if [ -f /etc/bash.command-not-found ]; then
     . /etc/bash.command-not-found
 fi
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
 
 # Aliases
 alias please="sudo"
@@ -128,8 +144,9 @@ alias newsboat="newsboat -r"
 alias weather="curl wttr.in/Melbourne"
 alias weather2="curl v2.wttr.in/Melbourne"
 alias moon="curl wttr.in/Moon"
-alias reddsave="env -i reddsaver -e ~/Downlads/Programs/reddsaver/reddsaver.env -d ~/Pictures/reddit/"
+alias reddsave="env -i reddsaver -e ~/Downloads/Programs/reddsaver/reddsaver.env -d ~/Pictures/reddit/"
 alias fd="fdfind -HI"
+alias fz="fzf | tr -d '\n' | xclip -selection c"
 alias v="nvim"
 alias sv="sudo nvim"
 alias delete="sudo rm -rf"
@@ -143,6 +160,7 @@ alias fap=$'(grim -g "$(slurp)")'
 alias walls="sxiv -t -p -b -r -g 1200x675 ~/Pictures/walls &"
 alias dumps="sxiv -t -p -b -r -g 1200x675 ~/Pictures/dumps &"
 alias emptytrash="rm -rf ~/.local/share/fff/trash/*"
+alias h="history | cut -c 20- | sort | uniq | fzf | tr -d '\n' | xclip -selection c"
 # kb-manager
 alias kbl="kb list"
 alias kbe="kb edit"
