@@ -117,8 +117,6 @@ fi
 
 # Aliases
 alias please="sudo"
-alias suvimrc="sudo nvim /etc/xdg/nvim/init.vim"
-alias userChrome="nvim ~/.mozilla/firefox/al4zpld7.default-release/chrome/userChrome.css"
 alias update="sudo apt update"
 alias upgrade="sudo apt upgrade"
 alias fullupgrade="sudo apt full-upgrade"
@@ -156,11 +154,12 @@ alias reboot="sudo reboot"
 alias goodbye="sudo shutdown -h now"
 alias xterm="xterm -ti vt340"
 alias w3mimg="w3m -o auto_image=TRUE"
-alias fap=$'(grim -g "$(slurp)")'
+alias swot=$'(grim -g "$(slurp)")'
 alias walls="sxiv -t -p -b -r -g 1200x675 ~/Pictures/walls &"
 alias dumps="sxiv -t -p -b -r -g 1200x675 ~/Pictures/dumps &"
 alias emptytrash="rm -rf ~/.local/share/fff/trash/*"
 alias h="history | cut -c 20- | sort | uniq | fzf | tr -d '\n' | xclip -selection c"
+alias fap="cat ~/Documents/Dave/mpvhistory.txt | fzf | tr -d '\n' | xclip -selection c"
 # kb-manager
 alias kbl="kb list"
 alias kbe="kb edit"

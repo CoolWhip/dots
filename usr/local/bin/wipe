@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+sed '/porn/d' /home/$USER/.zsh_history > .zsh_history.bak &
+
+chmod 600 /home/$USER/.zsh_history.bak &
+
+mv /home/$USER/.zsh_history.bak /home/$USER/.zsh_history
+
