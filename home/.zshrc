@@ -148,7 +148,6 @@ alias fz="fzf | tr -d '\n' | xclip -selection c"
 alias v="nvim"
 alias sv="sudo nvim"
 alias delete="sudo rm -rf"
-alias emptytrash="rm -rf ~/.local/share/fff/trash/*"
 alias rustupdate="rustup update"
 alias reboot="sudo reboot"
 alias goodbye="sudo shutdown -h now"
@@ -157,7 +156,7 @@ alias w3mimg="w3m -o auto_image=TRUE"
 alias swot=$'(grim -g "$(slurp)")'
 alias walls="sxiv -t -p -b -r -g 1200x675 ~/Pictures/walls &"
 alias dumps="sxiv -t -p -b -r -g 1200x675 ~/Pictures/dumps &"
-alias emptytrash="rm -rf ~/.local/share/fff/trash/*"
+alias emptytrash="cd ~/.local/share/fff/trash/ && rm -rf * && rm -rf .* && cd"
 alias h="history | cut -c 20- | sort | uniq | fzf | tr -d '\n' | xclip -selection c"
 alias fap="cat ~/Documents/Dave/mpvhistory.txt | fzf | tr -d '\n' | xclip -selection c"
 # kb-manager
@@ -168,5 +167,11 @@ alias kbv="kb view"
 alias kbd="kb delete --id"
 alias kbg="kb grep"
 alias kbt="kb list --tags"
+# git
+alias status="git status"
+alias add="git add ."
+alias commit="git commit -m"
+alias push="git push"
+alias pull="git pull"
 
 ufetch
